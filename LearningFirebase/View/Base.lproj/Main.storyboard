@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qPQ-N1-2LY">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sign InVC-->
+        <scene sceneID="nt1-mS-UtO">
+            <objects>
+                <viewController id="qPQ-N1-2LY" customClass="SignInVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ViU-va-hT2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="18301976_170760036784928_8172286116276670772_n" translatesAutoresizingMaskIntoConstraints="NO" id="gz8-KY-5BV">
+                                <rect key="frame" x="144" y="134" width="86" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xqe-BJ-Jyv">
+                                <rect key="frame" x="69" y="282" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whH-Vc-NoX">
+                                <rect key="frame" x="69" y="358" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utB-v2-KKs">
+                                <rect key="frame" x="108" y="438" width="158" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="aMl-f9-v54"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Nk-6Co">
+                                <rect key="frame" x="48" y="523" width="279" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Not a member? Tap here to sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="jJ5-Pe-FC6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.66614978869999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="d6g-WM-P84"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTF" destination="xqe-BJ-Jyv" id="smy-fq-owG"/>
+                        <outlet property="passwordTF" destination="whH-Vc-NoX" id="l8c-d9-gkL"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SignInToSignalsSegue" id="dTA-ma-eVF"/>
+                        <segue destination="Xc6-Xb-cHi" kind="show" identifier="SignInToSignUpSegue" id="LNw-k7-tOr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5at-Hz-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79" y="-118"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zL-Fh-YIY">
+                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Lwe-Nc-2NR"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Signals" id="Na6-O0-BAq">
+                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="rg3-dL-bsT">
+                                            <connections>
+                                                <action selector="onLogOutTapped:" destination="BYZ-38-t0r" id="OvN-Z4-PQt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qiz-ot-b5K">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="onAddTapped:" destination="BYZ-38-t0r" id="Skm-td-JId"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-Xs-j6j">
+                                <rect key="frame" x="0.0" y="72" width="375" height="740"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="f8l-OU-Hyl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80292612314224243" green="0.86969596147537231" blue="0.97612947225570679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dN3-Xs-j6j" secondAttribute="bottom" id="0lk-as-kvR"/>
+                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="20a-Eh-CtR"/>
+                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3o5-fX-Ol2"/>
+                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5nv-X3-xbo"/>
+                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="RHy-w9-MVC"/>
+                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XdS-b7-qW0"/>
+                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aey-1b-X0w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dN3-Xs-j6j" id="Rqj-Ls-jvh"/>
+                        <segue destination="qPQ-N1-2LY" kind="show" identifier="SignOutSegue" id="b6D-6c-wam"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="-1"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="5ne-Ba-7LZ">
+            <objects>
+                <viewController id="Xc6-Xb-cHi" customClass="SignUpVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dt2-bv-YkE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="18301976_170760036784928_8172286116276670772_n" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-mJ-gfK">
+                                <rect key="frame" x="144" y="134" width="86" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-nx-8CT">
+                                <rect key="frame" x="69" y="371" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-Sl-nuX">
+                                <rect key="frame" x="69" y="261" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHl-sN-Bgi">
+                                <rect key="frame" x="69" y="430" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-9O-VKI">
+                                <rect key="frame" x="108" y="508" width="158" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignUpTapped:" destination="Xc6-Xb-cHi" eventType="touchUpInside" id="2zw-F4-GkJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkJ-x3-mfM">
+                                <rect key="frame" x="69" y="317" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.66614978869999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SE4-jn-ISH"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTF" destination="zFi-nx-8CT" id="h8d-Pk-c0T"/>
+                        <outlet property="firstNameTF" destination="8cB-Sl-nuX" id="Xrq-4T-D31"/>
+                        <outlet property="lastNameTF" destination="WkJ-x3-mfM" id="eml-Qs-E5P"/>
+                        <outlet property="passwordTF" destination="nHl-sN-Bgi" id="wau-OF-luZ"/>
+                        <segue destination="qPQ-N1-2LY" kind="show" identifier="SignUpToSignInSegue" id="3KC-Bu-e5n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIT-9k-woP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="-950"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3KC-Bu-e5n"/>
+    </inferredMetricsTieBreakers>
+</document>

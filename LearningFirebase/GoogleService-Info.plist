@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>904713504214-08v49jbb74ch9o10dldeqgofjm3laflc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.904713504214-08v49jbb74ch9o10dldeqgofjm3laflc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBaCbaeCm_eR1Y8L9hsUOPAE43ZNjlKwVI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>904713504214</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kkudumu.LearningFirebase</string>
+	<key>PROJECT_ID</key>
+	<string>learningfirebase-f8e28</string>
+	<key>STORAGE_BUCKET</key>
+	<string>learningfirebase-f8e28.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:904713504214:ios:8652490c8fa799f2</string>
+	<key>DATABASE_URL</key>
+	<string>https://learningfirebase-f8e28.firebaseio.com</string>
+</dict>
+</plist>
