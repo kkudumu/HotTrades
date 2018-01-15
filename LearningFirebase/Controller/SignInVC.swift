@@ -54,9 +54,13 @@ class SignInVC: UIViewController {
             print(user.uid)
             
         }
+        self.emailTF.resignFirstResponder()
+        self.passwordTF.resignFirstResponder()
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func onSignUpTapped(_ sender: Any) {
         
