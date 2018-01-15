@@ -19,6 +19,7 @@
 		33A4DFEF2009CD41000A6E30 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFEE2009CD41000A6E30 /* SignInVC.swift */; };
 		33A4DFF32009CD91000A6E30 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFF22009CD91000A6E30 /* SignUpVC.swift */; };
 		33A4DFF92009DC06000A6E30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFF82009DC06000A6E30 /* AlertController.swift */; };
+		33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFA8200C5E23004BC19D /* UserVC.swift */; };
 		FCBFD7A050F7F2A0F1E950A2 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		33A4DFEE2009CD41000A6E30 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		33A4DFF22009CD91000A6E30 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		33A4DFF82009DC06000A6E30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		33C3AFA8200C5E23004BC19D /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		99E3916B9FB021FA26B0D187 /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				330292CF20098568003C6420 /* ViewController.swift */,
 				33A4DFEE2009CD41000A6E30 /* SignInVC.swift */,
 				33A4DFF22009CD91000A6E30 /* SignUpVC.swift */,
+				33C3AFA8200C5E23004BC19D /* UserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				33A4DFF92009DC06000A6E30 /* AlertController.swift in Sources */,
 				336C442C20099F9E00A47A86 /* PostsSnapshot.swift in Sources */,
 				336C442A20098F0B00A47A86 /* DatabaseService.swift in Sources */,
+				33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

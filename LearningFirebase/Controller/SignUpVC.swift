@@ -23,7 +23,10 @@ class SignUpVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func onBackTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToSignUpSegue", sender: self)
+    }
+    
     @IBAction func onSignUpTapped(_ sender: Any) {
         
         guard let firstName = firstNameTF.text,
@@ -38,6 +41,8 @@ class SignUpVC: UIViewController {
             AlertController.showAlert(self, title: "Missing Info", message: "Please fill out all fields.")
             return
         }
+        
+        
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             guard error == nil else {

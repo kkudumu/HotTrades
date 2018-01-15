@@ -33,6 +33,17 @@ class SignInVC: UIViewController {
                 
         }
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            DatabaseService.shared.REF_ADMINS.observe(.value, with: { (snapshot) in
+                if let dictionary = snapshot.value as? NSDictionary {
+                    if let adminEmail = dictionary["email"] as? String {
+                        if email == adminEmail {
+                            self.performSegue(withIdentifier: "SignInToSignalsSegue", sender: self)
+                        } else {
+                            self.performSegue(withIdentifier: "ToUserVC", sender: self)
+                        }
+                    }
+                }
+            })
             guard error == nil else {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return
@@ -42,7 +53,6 @@ class SignInVC: UIViewController {
             print(user.displayName ?? "MISSING DISPLAY NAME")
             print(user.uid)
             
-            self.performSegue(withIdentifier: "SignInToSignalsSegue", sender: nil)
         }
     }
     
@@ -53,6 +63,9 @@ class SignInVC: UIViewController {
         self.performSegue(withIdentifier: "SignInToSignUpSegue", sender: nil)
         
     }
+    
+    
+    
 }
     
 
