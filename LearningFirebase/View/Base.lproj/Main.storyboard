@@ -225,7 +225,6 @@
         <!--UserVC-->
         <scene sceneID="A9y-mE-c2C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
                 <viewController id="tXb-gF-bXv" customClass="UserVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2PH-Jn-RPc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -245,6 +244,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="Gfd-gz-jZT">
                                             <connections>
                                                 <action selector="onUserLogOutTapped:" destination="tXb-gF-bXv" id="gyS-yV-PMh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="vj0-7P-I9E">
+                                            <connections>
+                                                <action selector="onSubscribeTapped" destination="tXb-gF-bXv" id="LnL-Vh-kEy"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -275,8 +279,9 @@
                         <segue destination="qPQ-N1-2LY" kind="show" identifier="UserSignOutSegue" id="wLp-lz-33z"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-154" y="-177"/>
+            <point key="canvasLocation" x="233" y="-210"/>
         </scene>
     </scenes>
     <resources>

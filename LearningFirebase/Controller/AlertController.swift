@@ -17,5 +17,17 @@ class AlertController {
         alert.addAction(action)
         inViewController.present(alert, animated: true, completion: nil)
     }
+    static func subscribeAlert(in vc: UIViewController) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let subscribe = UIAlertAction(title: "Subscribe", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .newPosts)
+        }
+        let unsubscribe = UIAlertAction(title: "Unsubscribe", style: .default) { (_) in
+            MessagingService.shared.unsubscribe(from: .newPosts)
+        }
+        alert.addAction(subscribe)
+        alert.addAction(unsubscribe)
+        vc.present(alert, animated: true)
+    }
     
 }

@@ -11,7 +11,11 @@ import Firebase
 
 let DB_BASE = Database.database().reference()
 
+
+
+
 class DatabaseService {
+    
     
     static let shared = DatabaseService()
     private init() {}
@@ -21,6 +25,7 @@ class DatabaseService {
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_ADMINS = DB_BASE.child("admins")
+    private var _REF_POSTS = DB_BASE.child("posts")
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -31,6 +36,9 @@ class DatabaseService {
     var REF_ADMINS: DatabaseReference {
         return _REF_ADMINS
     }
+    var REF_POSTS: DatabaseReference {
+        return _REF_POSTS
+    }
     
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, Any>, isAdmin: Bool) {
         if isAdmin {
@@ -39,6 +47,19 @@ class DatabaseService {
             REF_USERS.child(uid).updateChildValues(userData)
         }
         
+    }
+    func reference(_ databaseReference: DatabaseReference) -> DatabaseReference {
+        return Database.database().reference().child("posts")
+    }
+    
+    func observe(_ databaseReference: DatabaseReference, completion: @escaping (DataSnapshot) -> Void) {
+        reference(databaseReference).observe(.value) { (snapshot) in
+            completion(snapshot)
+        }
+    }
+        
+    func post(parameters: [String: Any], to databaseReference: DatabaseReference) {
+        reference(databaseReference).childByAutoId().setValue(parameters)
     }
     
     

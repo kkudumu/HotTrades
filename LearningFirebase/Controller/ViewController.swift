@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let firstLast = Auth.auth().currentUser?.displayName else { return }
+//        guard let firstLast = Auth.auth().currentUser?.displayName else { return }
         
 //        label.text = "Hello \(firstLast)" - added in case we want to welcome users in the future. May need to change it to just first name in the displayName though.
         

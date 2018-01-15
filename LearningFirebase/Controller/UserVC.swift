@@ -44,6 +44,9 @@ class UserVC: UIViewController {
         }
     }
 
+    @IBAction func onSubscribeTapped() {
+        AlertController.subscribeAlert(in: self)
+    }
     
 }
 //creating table view
