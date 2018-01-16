@@ -19,7 +19,20 @@ class SignInVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func assignUserRole(theUid: String) {
+        let userRef = DatabaseService.shared.REF_BASE.child("users").child(theUid)
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
+            let userDict = snapshot.value as! [String: Any]
+            let userRole = userDict["role"] as! String
+            if userRole == "admin"{
+                self.performSegue(withIdentifier: "SignInToSignalsSegue", sender: self)
+            } else {
+                self.performSegue(withIdentifier: "ToUserVC", sender: self)
+            }
+        }
 
+    }
 
     @IBAction func onSignInTapped(_ sender: Any) {
         
@@ -32,23 +45,15 @@ class SignInVC: UIViewController {
                 return
                 
         }
+        
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            DatabaseService.shared.REF_ADMINS.observe(.value, with: { (snapshot) in
-                if let dictionary = snapshot.value as? NSDictionary {
-                    if let adminEmail = dictionary["email"] as? String {
-                        if email == adminEmail {
-                            self.performSegue(withIdentifier: "SignInToSignalsSegue", sender: self)
-                        } else {
-                            self.performSegue(withIdentifier: "ToUserVC", sender: self)
-                        }
-                    }
-                }
-            })
             guard error == nil else {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return
             }
             guard let user = user else { return }
+            let uid = user.uid
+            self.assignUserRole(theUid: uid)
             print(user.email ?? "MISSING EMAIL")
             print(user.displayName ?? "MISSING DISPLAY NAME")
             print(user.uid)

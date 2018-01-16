@@ -45,10 +45,25 @@ class SignUpVC: UIViewController {
         
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            
             guard error == nil else {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return
             }
+            guard let uid = user?.uid else { return }
+            let role = "role"
+            let userReference = DatabaseService.shared.REF_BASE.child("users").child(uid)
+            let parameters = ["first name": firstName, "last name": lastName, "email": email, role: "user"]
+            
+            userReference.updateChildValues(parameters, withCompletionBlock: { (error, ref) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                self.dismiss(animated: true, completion: nil)
+            })
+            
+            
             guard let user = user else { return }
             print(user.email ?? "MISSING EMAIL")
             print(user.uid)
