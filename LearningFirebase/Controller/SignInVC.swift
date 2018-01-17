@@ -20,6 +20,7 @@ class SignInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //unwrap the user path to reach the "roles" and assign appropriate view controller base on role
     func assignUserRole(theUid: String) {
         let userRef = DatabaseService.shared.REF_BASE.child("users").child(theUid)
         userRef.observeSingleEvent(of: .value) { (snapshot) in
@@ -31,9 +32,18 @@ class SignInVC: UIViewController {
                 self.performSegue(withIdentifier: "ToUserVC", sender: self)
             }
         }
-
     }
-
+    
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+       self.performSegue(withIdentifier: "ResetPWSegue", sender: nil)
+        
+        
+    }
+    
+    
+    
+    //sign in and validation logic. Check for errors if there
     @IBAction func onSignInTapped(_ sender: Any) {
         
         guard let email = emailTF.text,

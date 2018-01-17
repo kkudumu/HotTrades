@@ -19,6 +19,7 @@
 		33A4DFEF2009CD41000A6E30 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFEE2009CD41000A6E30 /* SignInVC.swift */; };
 		33A4DFF32009CD91000A6E30 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFF22009CD91000A6E30 /* SignUpVC.swift */; };
 		33A4DFF92009DC06000A6E30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A4DFF82009DC06000A6E30 /* AlertController.swift */; };
+		33AA44A8200ED6B500468484 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA44A7200ED6B500468484 /* ResetPasswordVC.swift */; };
 		33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFA8200C5E23004BC19D /* UserVC.swift */; };
 		33C3AFAB200C6261004BC19D /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAA200C6261004BC19D /* UNService.swift */; };
 		33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAD200C7799004BC19D /* MessagingService.swift */; };
@@ -41,6 +42,7 @@
 		33A4DFEE2009CD41000A6E30 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		33A4DFF22009CD91000A6E30 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		33A4DFF82009DC06000A6E30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		33AA44A7200ED6B500468484 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		33C3AFA8200C5E23004BC19D /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		33C3AFAA200C6261004BC19D /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		33C3AFAC200C65D1004BC19D /* LearningFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearningFirebase.entitlements; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				33A4DFEE2009CD41000A6E30 /* SignInVC.swift */,
 				33A4DFF22009CD91000A6E30 /* SignUpVC.swift */,
 				33C3AFA8200C5E23004BC19D /* UserVC.swift */,
+				33AA44A7200ED6B500468484 /* ResetPasswordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */,
 				33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
+				33AA44A8200ED6B500468484 /* ResetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

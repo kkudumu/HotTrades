@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utB-v2-KKs">
-                                <rect key="frame" x="108" y="438" width="158" height="52"/>
+                                <rect key="frame" x="108" y="469" width="158" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Nk-6Co">
-                                <rect key="frame" x="48" y="523" width="279" height="30"/>
+                                <rect key="frame" x="48" y="545" width="279" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Not a member? Tap here to sign up">
@@ -62,6 +62,18 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="jJ5-Pe-FC6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSM-pn-Dt1">
+                                <rect key="frame" x="48" y="403" width="279" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPasswordTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="cWp-Ve-HCz"/>
+                                    <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="hnH-Kl-5tB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,11 +86,12 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SignInToSignalsSegue" id="dTA-ma-eVF"/>
                         <segue destination="Xc6-Xb-cHi" kind="show" identifier="SignInToSignUpSegue" id="LNw-k7-tOr"/>
                         <segue destination="tXb-gF-bXv" kind="show" identifier="ToUserVC" id="oG5-0l-YHS"/>
+                        <segue destination="spK-Dl-ccY" kind="presentation" identifier="ResetPWSegue" id="5fh-Kj-MdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5at-Hz-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1188" y="-176"/>
+            <point key="canvasLocation" x="-3004" y="-21"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -281,7 +294,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="-210"/>
+            <point key="canvasLocation" x="-209" y="-137"/>
+        </scene>
+        <!--Reset PasswordVC-->
+        <scene sceneID="wOC-qs-cGU">
+            <objects>
+                <viewController id="spK-Dl-ccY" customClass="ResetPasswordVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2W0-R7-XkX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="18301976_170760036784928_8172286116276670772_n" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-es-zEi">
+                                <rect key="frame" x="144" y="134" width="86" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ks7-Ca-cMc">
+                                <rect key="frame" x="69" y="282" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7I-m4-t4P">
+                                <rect key="frame" x="108" y="344" width="158" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="qoO-ZQ-5Nk"/>
+                                    <action selector="resetPasswordTapped:" destination="spK-Dl-ccY" eventType="touchUpInside" id="NKl-lD-TFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hB0-JT-gqY">
+                                <rect key="frame" x="48" y="460" width="279" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackTapped:" destination="spK-Dl-ccY" eventType="touchUpInside" id="kP5-Z6-tMW"/>
+                                    <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="v65-1q-e7J"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.66614978869999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Wu7-aR-p43"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTF" destination="ks7-Ca-cMc" id="uLA-iX-8fc"/>
+                        <segue destination="qPQ-N1-2LY" kind="presentation" identifier="GoBackToLoginSegue" id="3Hg-Xo-Dbm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bn0-wN-WWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1970.4000000000001" y="-21.428571428571431"/>
         </scene>
     </scenes>
     <resources>

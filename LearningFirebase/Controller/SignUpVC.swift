@@ -45,7 +45,6 @@ class SignUpVC: UIViewController {
         
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            
             guard error == nil else {
                 AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                 return

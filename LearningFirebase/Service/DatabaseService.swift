@@ -62,6 +62,16 @@ class DatabaseService {
         reference(databaseReference).childByAutoId().setValue(parameters)
     }
     
+    func resetPassword(email: String) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+            print("An email with information on how to reset your password has been sent to you. Thank you.")
+        }else{
+            print(error!.localizedDescription)
+        }
+    }
     
+    
+    }
 }
 
