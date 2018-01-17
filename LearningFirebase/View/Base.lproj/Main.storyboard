@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5at-Hz-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3004" y="-21"/>
+            <point key="canvasLocation" x="-1292" y="-330"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,49 +101,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zL-Fh-YIY">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
-                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Lwe-Nc-2NR"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Signals" id="Na6-O0-BAq">
-                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="rg3-dL-bsT">
-                                            <connections>
-                                                <action selector="onLogOutTapped:" destination="BYZ-38-t0r" id="OvN-Z4-PQt"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qiz-ot-b5K">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="onAddTapped:" destination="BYZ-38-t0r" id="Skm-td-JId"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-Xs-j6j">
-                                <rect key="frame" x="0.0" y="72" width="375" height="740"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-Xs-j6j">
+                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="f8l-OU-Hyl"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-3c-BJy">
+                                <rect key="frame" x="16" y="78" width="126" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw0-Hx-Zjk">
+                                <rect key="frame" x="16" y="30" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A81-Q1-06q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdp-mf-HaK">
+                                <rect key="frame" x="259" y="30" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Add Signal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qd-xX-Mic"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.80292612314224243" green="0.86969596147537231" blue="0.97612947225570679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dN3-Xs-j6j" secondAttribute="bottom" id="0lk-as-kvR"/>
-                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="20a-Eh-CtR"/>
-                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3o5-fX-Ol2"/>
-                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5nv-X3-xbo"/>
-                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="RHy-w9-MVC"/>
-                            <constraint firstItem="dN3-Xs-j6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XdS-b7-qW0"/>
-                            <constraint firstItem="7zL-Fh-YIY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aey-1b-X0w"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.36988556385040283" green="0.5153847336769104" blue="0.79755789041519165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -153,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="-944"/>
+            <point key="canvasLocation" x="-244" y="-1054.4334975369459"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="5ne-Ba-7LZ">
@@ -186,7 +182,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-9O-VKI">
                                 <rect key="frame" x="108" y="508" width="158" height="52"/>
@@ -233,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIT-9k-woP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1188" y="-918"/>
+            <point key="canvasLocation" x="-2666" y="-1054"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="A9y-mE-c2C">
@@ -243,48 +239,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a7-kh-eOz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
-                                <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="wn2-8e-Rfz"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Signals" id="978-c9-Tac">
-                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="Gfd-gz-jZT">
-                                            <connections>
-                                                <action selector="onUserLogOutTapped:" destination="tXb-gF-bXv" id="gyS-yV-PMh"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="vj0-7P-I9E">
-                                            <connections>
-                                                <action selector="onSubscribeTapped" destination="tXb-gF-bXv" id="LnL-Vh-kEy"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8xL-nB-Z5O">
-                                <rect key="frame" x="0.0" y="72" width="375" height="740"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8xL-nB-Z5O">
+                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tXb-gF-bXv" id="lJf-J0-HEl"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="354-rX-0qe">
+                                <rect key="frame" x="16" y="30" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onUserLogOutTapped:" destination="tXb-gF-bXv" eventType="touchUpInside" id="dRI-kZ-QhF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-QM-jjD">
+                                <rect key="frame" x="259" y="30" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Subscribe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSubscribeTapped" destination="tXb-gF-bXv" eventType="touchUpInside" id="lSh-M8-Toa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW9-T0-Juo">
+                                <rect key="frame" x="16" y="78" width="126" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.8029261231" green="0.86969596149999995" blue="0.97612947230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="8xL-nB-Z5O" firstAttribute="trailing" secondItem="GaV-FP-yGU" secondAttribute="trailing" id="Ev6-nS-1l6"/>
-                            <constraint firstItem="5a7-kh-eOz" firstAttribute="leading" secondItem="GaV-FP-yGU" secondAttribute="leading" id="J7W-bR-6m8"/>
-                            <constraint firstAttribute="bottom" secondItem="8xL-nB-Z5O" secondAttribute="bottom" id="KLA-HL-ORw"/>
-                            <constraint firstItem="8xL-nB-Z5O" firstAttribute="top" secondItem="GaV-FP-yGU" secondAttribute="top" constant="28" id="U7o-Ki-lrj"/>
-                            <constraint firstItem="8xL-nB-Z5O" firstAttribute="leading" secondItem="GaV-FP-yGU" secondAttribute="leading" id="ohd-rw-cx8"/>
-                            <constraint firstItem="5a7-kh-eOz" firstAttribute="top" secondItem="2PH-Jn-RPc" secondAttribute="top" constant="28" id="pfz-1C-c4J"/>
-                            <constraint firstItem="5a7-kh-eOz" firstAttribute="trailing" secondItem="GaV-FP-yGU" secondAttribute="trailing" id="tE3-s2-Ibh"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.36757284400000001" green="0.51410466430000001" blue="0.79588180779999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="GaV-FP-yGU"/>
                     </view>
                     <connections>
@@ -294,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="-137"/>
+            <point key="canvasLocation" x="-244" y="-328.81773399014781"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="wOC-qs-cGU">
@@ -351,13 +344,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn0-wN-WWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1970.4000000000001" y="-21.428571428571431"/>
+            <point key="canvasLocation" x="-2591" y="-330"/>
         </scene>
     </scenes>
     <resources>
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wLp-lz-33z"/>
+        <segue reference="3Hg-Xo-Dbm"/>
     </inferredMetricsTieBreakers>
 </document>
