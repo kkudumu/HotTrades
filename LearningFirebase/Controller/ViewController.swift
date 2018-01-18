@@ -45,9 +45,11 @@ class ViewController: UIViewController {
         }
         
     }
+
     
     //Creating text fields to pop up for Chipp to add signals.
     @IBAction func onAddTapped(_ sender: Any) {
+      
         
         let alert = UIAlertController(title: "Add A Signal", message: "What Signal Would You Like To Add?", preferredStyle: .alert)
         
@@ -77,6 +79,7 @@ class ViewController: UIViewController {
     
     
     }
+
 //creating table view
 extension ViewController: UITableViewDataSource {
     
@@ -87,10 +90,10 @@ extension ViewController: UITableViewDataSource {
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AdminTableViewCell", for: indexPath) as! AdminTableViewCell
         
-        cell.textLabel?.text = posts[indexPath.row].message
-        cell.detailTextLabel?.text = posts[indexPath.row].username
+        cell.signalLabel?.text = posts[indexPath.row].message
+        cell.priceLabel?.text = posts[indexPath.row].username
         return cell
     }
     

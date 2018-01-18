@@ -59,10 +59,10 @@ extension UserVC: UITableViewDataSource {
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         
-        cell.textLabel?.text = posts[indexPath.row].message
-        cell.detailTextLabel?.text = posts[indexPath.row].username
+        cell.signalLabel?.text = posts[indexPath.row].message
+        cell.priceLabel?.text = posts[indexPath.row].username
         return cell
     }
     

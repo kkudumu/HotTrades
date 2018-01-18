@@ -105,6 +105,45 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminTableViewCell" id="ZFz-dV-fRu" customClass="AdminTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFz-dV-fRu" id="RgA-av-wRi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SELL STOP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-9X-Aoj">
+                                                    <rect key="frame" x="15" y="12" width="102" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123.456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-6t-lNX">
+                                                    <rect key="frame" x="290" y="12" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EUR/USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-R7-192">
+                                                    <rect key="frame" x="157" y="12" width="86" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="ydW-6t-lNX" id="m3Z-zR-p6m"/>
+                                            <outlet property="signalLabel" destination="Cjc-9X-Aoj" id="Fxn-AR-ncw"/>
+                                            <outlet property="symbolLabel" destination="sLz-R7-192" id="CzR-vM-9RU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="f8l-OU-Hyl"/>
                                 </connections>
@@ -243,6 +282,44 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="pis-6G-Kj5" customClass="UserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pis-6G-Kj5" id="LcC-iT-X5h">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SELL STOP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrS-1d-21W">
+                                                    <rect key="frame" x="15" y="11" width="102" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123.456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-Eu-Fje">
+                                                    <rect key="frame" x="290" y="10" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EUR/USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-FL-wA7">
+                                                    <rect key="frame" x="152" y="12" width="86" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="CNj-Eu-Fje" id="vbZ-Vi-BsU"/>
+                                            <outlet property="signalLabel" destination="XrS-1d-21W" id="Q9Z-ip-9AY"/>
+                                            <outlet property="symbolLabel" destination="7Ef-FL-wA7" id="GO3-UI-ht4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="tXb-gF-bXv" id="lJf-J0-HEl"/>
                                 </connections>
@@ -283,11 +360,56 @@
                     <connections>
                         <outlet property="tableView" destination="8xL-nB-Z5O" id="Rfd-i7-bLY"/>
                         <segue destination="qPQ-N1-2LY" kind="show" identifier="UserSignOutSegue" id="wLp-lz-33z"/>
+                        <segue destination="3SS-xg-9iE" kind="presentation" identifier="ToChartSegue" id="E5j-Be-IJQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-244" y="-328.81773399014781"/>
+        </scene>
+        <!--ChartVC-->
+        <scene sceneID="ONZ-Wt-fx8">
+            <objects>
+                <viewController id="3SS-xg-9iE" customClass="ChartVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zmB-Iz-wpS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-5Q-ZLY">
+                                <rect key="frame" x="0.0" y="69" width="375" height="743"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yio-rb-dVe">
+                                <rect key="frame" x="22" y="37" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="AlB-Qf-xZI"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yio-rb-dVe" firstAttribute="leading" secondItem="UVI-fN-6U1" secondAttribute="leading" constant="22" id="0BW-Y7-nXz"/>
+                            <constraint firstItem="Tpp-5Q-ZLY" firstAttribute="leading" secondItem="UVI-fN-6U1" secondAttribute="leading" id="JZC-4L-Ghe"/>
+                            <constraint firstItem="UVI-fN-6U1" firstAttribute="top" secondItem="yio-rb-dVe" secondAttribute="top" constant="7" id="Lme-AJ-Z2x"/>
+                            <constraint firstItem="Tpp-5Q-ZLY" firstAttribute="bottom" secondItem="UVI-fN-6U1" secondAttribute="bottom" constant="34" id="dpI-FH-F4g"/>
+                            <constraint firstItem="UVI-fN-6U1" firstAttribute="trailing" secondItem="Tpp-5Q-ZLY" secondAttribute="trailing" id="iaP-nf-GmM"/>
+                            <constraint firstItem="Tpp-5Q-ZLY" firstAttribute="top" secondItem="UVI-fN-6U1" secondAttribute="top" constant="25" id="jcO-OB-1gJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UVI-fN-6U1"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="yio-rb-dVe" id="hXQ-Z5-K2e"/>
+                        <outlet property="webView" destination="Tpp-5Q-ZLY" id="4Ao-uz-n14"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JO-vH-8DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="-329"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="wOC-qs-cGU">
@@ -351,6 +473,6 @@
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Hg-Xo-Dbm"/>
+        <segue reference="wLp-lz-33z"/>
     </inferredMetricsTieBreakers>
 </document>
