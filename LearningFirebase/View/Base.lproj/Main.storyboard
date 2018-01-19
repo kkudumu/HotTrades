@@ -438,6 +438,34 @@
                         <outlet property="tableView" destination="8xL-nB-Z5O" id="Rfd-i7-bLY"/>
                         <segue destination="qPQ-N1-2LY" kind="show" identifier="UserSignOutSegue" id="wLp-lz-33z"/>
                         <segue destination="3SS-xg-9iE" kind="presentation" identifier="ToChartSegue" id="E5j-Be-IJQ"/>
+                        <segue destination="Vn6-zt-9ba" kind="presentation" identifier="TOAUDUSD" id="PzJ-uz-1hU"/>
+                        <segue destination="2xl-on-pkb" kind="presentation" identifier="TOAUDCAD" id="lHl-R1-ngr"/>
+                        <segue destination="2TA-fp-iwX" kind="presentation" identifier="TOAUDCHF" id="Xp4-zo-K4l"/>
+                        <segue destination="EGC-6b-bZN" kind="presentation" identifier="TOAUDJPY" id="S9Z-QE-8Ly"/>
+                        <segue destination="hhU-AK-gqk" kind="presentation" identifier="TOAUDNZD" id="UBH-K3-IWA"/>
+                        <segue destination="E0g-mw-to4" kind="presentation" identifier="TOCADCHF" id="UZH-eq-Bed"/>
+                        <segue destination="WKo-0P-NkP" kind="presentation" identifier="TOCADJPY" id="1g0-i4-qPc"/>
+                        <segue destination="bge-u6-B3n" kind="presentation" identifier="TOCHFJPY" id="YOh-fH-Dkz"/>
+                        <segue destination="fcT-NP-0B8" kind="presentation" identifier="TOEURAUD" id="DBi-Yz-Vfj"/>
+                        <segue destination="SA0-9Y-Woy" kind="presentation" identifier="TOEURGBP" id="Qxs-9d-VRT"/>
+                        <segue destination="TKe-qC-uug" kind="presentation" identifier="TOEURUSD" id="F3M-1K-60z"/>
+                        <segue destination="kKq-NT-f1U" kind="presentation" identifier="TOGBPCHF" id="xhH-aR-hRx"/>
+                        <segue destination="AKp-gL-BEg" kind="presentation" identifier="TOGBPUSD" id="H15-Nl-a1X"/>
+                        <segue destination="j8d-gW-4d8" kind="presentation" identifier="TONZDJPY" id="3bA-2y-fjG"/>
+                        <segue destination="bd2-Pe-pLK" kind="presentation" identifier="TOUSDCHF" id="pCp-xR-MTk"/>
+                        <segue destination="5Cz-xo-HbM" kind="presentation" identifier="TOEURCHF" id="oyu-91-Xhw"/>
+                        <segue destination="vtL-2J-IAN" kind="presentation" identifier="TOEURNZD" id="EqQ-ea-a82"/>
+                        <segue destination="fYu-SF-XSU" kind="presentation" identifier="TOGBPCAD" id="M0H-6G-lqS"/>
+                        <segue destination="9m0-Gn-an5" kind="presentation" identifier="TOGBPNZD" id="hXU-9c-JJI"/>
+                        <segue destination="GfI-zP-toC" kind="presentation" identifier="TONZDCHF" id="s3L-ou-Bsa"/>
+                        <segue destination="eEv-SO-0tm" kind="presentation" identifier="TOUSDCAD" id="Qnn-oD-ksL"/>
+                        <segue destination="pqt-1R-vK7" kind="presentation" identifier="TOEURCAD" id="78z-DQ-bj6"/>
+                        <segue destination="Cx3-fu-ap8" kind="presentation" identifier="TOEURJPY" id="vRU-2o-pwL"/>
+                        <segue destination="fke-ux-lZn" kind="presentation" identifier="TOGBPAUD" id="zoh-5A-Vee"/>
+                        <segue destination="2f7-Vu-nUI" kind="presentation" identifier="TOGBPJPY" id="dYc-bu-qs3"/>
+                        <segue destination="2TW-Yw-y44" kind="presentation" identifier="TONZDCAD" id="KwC-P8-vwP"/>
+                        <segue destination="ta0-3P-Fqo" kind="presentation" identifier="TONZDUSD" id="WYz-ti-t4O"/>
+                        <segue destination="QAU-Pt-YI7" kind="presentation" identifier="TOUSDJPY" id="YcU-ka-Foq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
@@ -490,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JO-vH-8DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="-301"/>
+            <point key="canvasLocation" x="-194" y="650"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="wOC-qs-cGU">
@@ -594,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBB-yG-Zjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="-211"/>
+            <point key="canvasLocation" x="1958" y="-211"/>
         </scene>
         <!--Aud NzdVC-->
         <scene sceneID="yuu-7N-O49">
@@ -688,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGP-Ko-gn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3391" y="-211"/>
+            <point key="canvasLocation" x="3390" y="-211"/>
         </scene>
         <!--Aud ChfVC-->
         <scene sceneID="pC0-1q-CYq">
@@ -876,7 +904,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDB-Md-0jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4170" y="-211"/>
+            <point key="canvasLocation" x="4169" y="-211"/>
         </scene>
         <!--Eur GbpVC-->
         <scene sceneID="y2f-BY-XyD">
@@ -923,7 +951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfm-J6-hU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4169" y="463"/>
+            <point key="canvasLocation" x="4169" y="485"/>
         </scene>
         <!--Aud UsdVC-->
         <scene sceneID="LvQ-lV-x7u">

@@ -34,7 +34,6 @@ class UserVC: UIViewController {
             self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
             self.tableView.reloadData()
         })
-        
     }
 
     
@@ -50,7 +49,6 @@ class UserVC: UIViewController {
     @IBAction func onSubscribeTapped() {
         AlertController.subscribeAlert(in: self)
     }
-    
 }
 
 
@@ -61,62 +59,61 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if posts[indexPath.row].pair == "AUD/CAD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
-            
+            performSegue(withIdentifier: "TOAUDCAD", sender: self)
         } else if posts[indexPath.row].pair == "AUD/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOAUDCHF", sender: self)
         } else if posts[indexPath.row].pair == "AUD/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOAUDJPY", sender: self)
         } else if posts[indexPath.row].pair == "AUD/NZD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOAUDNZD", sender: self)
         } else if posts[indexPath.row].pair == "AUD/USD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOAUDUSD", sender: self)
         } else if posts[indexPath.row].pair == "CAD/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOCADCHF", sender: self)
         } else if posts[indexPath.row].pair == "CAD/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOCADJPY", sender: self)
         } else if posts[indexPath.row].pair == "CHF/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOCHFJPY", sender: self)
         } else if posts[indexPath.row].pair == "EUR/AUD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURAUD", sender: self)
         } else if posts[indexPath.row].pair == "EUR/CAD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURCAD", sender: self)
         } else if posts[indexPath.row].pair == "EUR/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURCHF", sender: self)
         } else if posts[indexPath.row].pair == "EUR/GBP" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURGBP", sender: self)
         } else if posts[indexPath.row].pair == "EUR/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURJPY", sender: self)
         } else if posts[indexPath.row].pair == "EUR/NZD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURNZD", sender: self)
         } else if posts[indexPath.row].pair == "EUR/USD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOEURUSD", sender: self)
         } else if posts[indexPath.row].pair == "GBP/AUD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPAUD", sender: self)
         } else if posts[indexPath.row].pair == "GBP/CAD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPCAD", sender: self)
         } else if posts[indexPath.row].pair == "GBP/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPCHF", sender: self)
         } else if posts[indexPath.row].pair == "GBP/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPJPY", sender: self)
         } else if posts[indexPath.row].pair == "GBP/NZD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPNZD", sender: self)
         } else if posts[indexPath.row].pair == "GBP/USD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOGBPUSD", sender: self)
         } else if posts[indexPath.row].pair == "NZD/CAD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TONZDCAD", sender: self)
         } else if posts[indexPath.row].pair == "NZD/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TONZDCHF", sender: self)
         } else if posts[indexPath.row].pair == "NZD/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TONZDJPY", sender: self)
         } else if posts[indexPath.row].pair == "NZD/USD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TONZDUSD", sender: self)
         } else if posts[indexPath.row].pair == "USD/CAD" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOUSDCAD", sender: self)
         } else if posts[indexPath.row].pair == "USD/CHF" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOUSDCHF", sender: self)
         } else if posts[indexPath.row].pair == "USD/JPY" {
-            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            performSegue(withIdentifier: "TOUSDJPY", sender: self)
         }
     }
     
