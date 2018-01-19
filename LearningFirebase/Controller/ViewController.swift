@@ -62,23 +62,35 @@ class ViewController: UIViewController {
             print(text)
             
             
-            let dateString = String(describing: Date())
-            
-            let parameters = ["username"    :dateString,
-                              "message"     :text,
-                              "date"        :dateString]
-            
-            //generates new ID for each post and set values in our database as parameters
-            DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
-            
+          
             }
         alert.addAction(cancel)
         alert.addAction(post)
-        present(alert, animated: true, completion: nil)
-        }
-    
-    
+//        present(alert, animated: true, completion: nil)
+        performSegue(withIdentifier: "ToPickerVC", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToPickerVC" {
+            let popup = segue.destination as! PickerVC
+            popup.onSave = onSave
+        }
+    }
+    func onSave(_ orderData: String,_ pairData: String, _ priceData: String) -> () {
+        
+        let dateString = String(describing: Date())
+        
+        let parameters = ["signal"       :orderData,
+                          "pair"         :pairData,
+                          "price"        :priceData,
+                          "date"         :dateString]
+        
+        //generates new ID for each post and set values in our database as parameters
+        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+        
+    }
+
+}
 
 //creating table view
 extension ViewController: UITableViewDataSource {
@@ -92,8 +104,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdminTableViewCell", for: indexPath) as! AdminTableViewCell
         
-        cell.signalLabel?.text = posts[indexPath.row].message
-        cell.priceLabel?.text = posts[indexPath.row].username
+        cell.signalLabel?.text = posts[indexPath.row].signal
+        cell.symbolLabel?.text = posts[indexPath.row].pair
+        cell.priceLabel?.text = posts[indexPath.row].price
         return cell
     }
     

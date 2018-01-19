@@ -35,6 +35,14 @@ class UserVC: UIViewController {
         })
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToChartSegue" {
+            //add logic for passing currency function
+        }
+    }
+    
     @IBAction func onUserLogOutTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -58,11 +66,15 @@ extension UserVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         
-        cell.signalLabel?.text = posts[indexPath.row].message
-        cell.priceLabel?.text = posts[indexPath.row].username
+        
+        
+        cell.signalLabel?.text = posts[indexPath.row].signal
+        cell.symbolLabel?.text = posts[indexPath.row].pair
+        cell.priceLabel?.text = posts[indexPath.row].price
         return cell
     }
     

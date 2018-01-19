@@ -11,8 +11,9 @@ import Foundation
 struct Post {
     
     let postId: String
-    let message: String
-    let username: String
+    let signal: String
+    let pair: String
+    let price: String
     let date: Date
     
     init?(postId: String, dict: [String: Any]) {
@@ -21,14 +22,16 @@ struct Post {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz"
         
-        guard let username = dict["username"] as? String,
-        let message = dict["message"] as? String,
+        guard let signal = dict["signal"] as? String,
+        let price = dict["price"] as? String,
+        let pair = dict["pair"] as? String,
         let dateString = dict["date"] as? String,
         let date = dateFormatter.date(from: dateString)
             else { return nil}
         
-        self.username = username
-        self.message = message
+        self.signal = signal
+        self.price = price
+        self.pair = pair
         self.date = date
     }
     

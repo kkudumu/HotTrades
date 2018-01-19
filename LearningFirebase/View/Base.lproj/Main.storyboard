@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
@@ -91,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5at-Hz-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1292" y="-330"/>
+            <point key="canvasLocation" x="-1292" y="-301"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -175,6 +178,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onAddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qd-xX-Mic"/>
+                                    <segue destination="S6a-js-i67" kind="presentation" identifier="ToPickerVC" id="X6U-zb-0Cd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,7 +192,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="-1054.4334975369459"/>
+            <point key="canvasLocation" x="-193" y="-1054"/>
+        </scene>
+        <!--PickerVC-->
+        <scene sceneID="mRz-wY-ry1">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="S6a-js-i67" customClass="PickerVC" customModule="LearningFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bR2-AZ-0kk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJD-fB-f1j">
+                                <rect key="frame" x="16" y="186" width="343" height="413"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Signal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-N4-Vcf">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.3675728440284729" green="0.51410466432571411" blue="0.79588180780410767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-8d-rpX">
+                                        <rect key="frame" x="0.0" y="79" width="343" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Order and Pair:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsT-ov-Vcc">
+                                        <rect key="frame" x="61" y="45" width="221" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Price?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzD-Df-F4t">
+                                        <rect key="frame" x="54" y="238" width="235" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="og7-u0-vBU">
+                                        <rect key="frame" x="56" y="288" width="231" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZr-JF-JoU">
+                                        <rect key="frame" x="118" y="339" width="106" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" red="0.36757284400000001" green="0.51410466430000001" blue="0.79588180779999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Send Signal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendSignalTapped:" destination="S6a-js-i67" eventType="touchUpInside" id="duS-SP-1eo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82741116751269039" green="0.82741116751269039" blue="0.82741116751269039" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="yVj-CZ-kt5"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="e8d-8d-rpX" id="Sf7-07-M1L"/>
+                        <outlet property="priceTF" destination="og7-u0-vBU" id="x3i-3g-h0d"/>
+                        <outlet property="signalButton" destination="AZr-JF-JoU" id="Wpc-nN-OTT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siM-Sv-P5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736.79999999999995" y="-1054.4334975369459"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="5ne-Ba-7LZ">
@@ -268,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIT-9k-woP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2666" y="-1054"/>
+            <point key="canvasLocation" x="-1292" y="-1054"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="A9y-mE-c2C">
@@ -365,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVf-f2-zXu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="-328.81773399014781"/>
+            <point key="canvasLocation" x="-218" y="-301"/>
         </scene>
         <!--ChartVC-->
         <scene sceneID="ONZ-Wt-fx8">
@@ -409,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JO-vH-8DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="-329"/>
+            <point key="canvasLocation" x="737" y="-301"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="wOC-qs-cGU">
@@ -466,13 +543,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bn0-wN-WWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2591" y="-330"/>
+            <point key="canvasLocation" x="-1292" y="430"/>
         </scene>
     </scenes>
     <resources>
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wLp-lz-33z"/>
+        <segue reference="dTA-ma-eVF"/>
+        <segue reference="b6D-6c-wam"/>
     </inferredMetricsTieBreakers>
 </document>
