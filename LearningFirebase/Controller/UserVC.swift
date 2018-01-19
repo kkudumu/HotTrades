@@ -12,14 +12,15 @@ import Firebase
 class UserVC: UIViewController {
     
     var posts = [Post]()
-    
+    var onCellTap: ((_ data: String) -> ())?
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         //        label.text = "Hello \(firstLast)" - added in case we want to welcome users in the future. May need to change it to just first name in the displayName though.
         
@@ -35,13 +36,7 @@ class UserVC: UIViewController {
         })
         
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToChartSegue" {
-            //add logic for passing currency function
-        }
-    }
+
     
     @IBAction func onUserLogOutTapped(_ sender: Any) {
         do {
@@ -57,8 +52,73 @@ class UserVC: UIViewController {
     }
     
 }
+
+
 //creating table view
-extension UserVC: UITableViewDataSource {
+extension UserVC: UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if posts[indexPath.row].pair == "AUD/CAD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+            
+        } else if posts[indexPath.row].pair == "AUD/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "AUD/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "AUD/NZD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "AUD/USD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "CAD/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "CAD/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "CHF/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/AUD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/CAD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/GBP" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/NZD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "EUR/USD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/AUD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/CAD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/NZD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "GBP/USD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "NZD/CAD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "NZD/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "NZD/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "NZD/USD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "USD/CAD" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "USD/CHF" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        } else if posts[indexPath.row].pair == "USD/JPY" {
+            performSegue(withIdentifier: "ToChartSegue", sender: self)
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -70,11 +130,11 @@ extension UserVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         
-        
-        
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
+        
+        
         return cell
     }
     

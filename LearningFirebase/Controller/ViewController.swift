@@ -76,6 +76,8 @@ class ViewController: UIViewController {
             popup.onSave = onSave
         }
     }
+    
+    
     //grab data from our picker and save to firebase
     func onSave(_ orderData: String,_ pairData: String, _ priceData: String) -> () {
         
@@ -91,10 +93,14 @@ class ViewController: UIViewController {
         
     }
 
+
 }
 
 //creating table view
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -108,9 +114,12 @@ extension ViewController: UITableViewDataSource {
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
+        
         return cell
     }
     
+
 }
+
 
 

@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
+
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var signalLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,3 +30,6 @@ class UserTableViewCell: UITableViewCell {
     }
 
 }
+
+
+
