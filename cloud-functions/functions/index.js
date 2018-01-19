@@ -10,14 +10,14 @@ exports.announcePost = functions.database
     })
 
     function sendNotification(posts) {
-        let message = posts.message
-        let date = posts.date
-        let username = posts.username
+        let signal = posts.signal
+        let pair = posts.pair
+        let price = posts.price
 
         let payload = {
             notification: {
                 title: 'New Signal Available',
-                body: message,
+                body: signal + "  " + pair + "  " + price,
                 sound: 'default'
             }
         }

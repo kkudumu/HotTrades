@@ -76,6 +76,7 @@ class ViewController: UIViewController {
             popup.onSave = onSave
         }
     }
+    //grab data from our picker and save to firebase
     func onSave(_ orderData: String,_ pairData: String, _ priceData: String) -> () {
         
         let dateString = String(describing: Date())
