@@ -25,15 +25,22 @@ class UserVC: UIViewController {
         //        label.text = "Hello \(firstLast)" - added in case we want to welcome users in the future. May need to change it to just first name in the displayName though.
         
         //observe data that is passed at reference point/ posts reference
-        DatabaseService.shared.postsReference.observe(DataEventType.value, with: { (snapshot) in
-            print(snapshot)
-            //if this guard works, we have our posts
-            guard let postsSnapshot = PostsSnapshot(with: snapshot) else { return }
-            self.posts = postsSnapshot.posts
-            //sorting posts in the proper order
-            self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
-            self.tableView.reloadData()
-        })
+        DatabaseService.shared.REF_BASE.child("users").observe(.value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                    print(snapshot)
+                    guard let postsSnapshot = PostsSnapshot(with: snapshot) else { return }
+                    print("POSTSNAP:\(postsSnapshot)")
+                    self.posts = postsSnapshot.posts
+                    print("POSTSNAP.POSTS:\(postsSnapshot)")
+                    //sorting posts in the proper order
+                    self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+                    self.tableView.reloadData()
+                })
+                
+            }
+        }
     }
 
     
@@ -52,9 +59,9 @@ class UserVC: UIViewController {
 }
 
 
+
 //creating table view
 extension UserVC: UITableViewDataSource, UITableViewDelegate {
-    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -133,6 +140,12 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            posts.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
     
 }

@@ -24,6 +24,24 @@ class ViewController: UIViewController {
 //        label.text = "Hello \(firstLast)" - added in case we want to welcome users in the future. May need to change it to just first name in the displayName though.
         
         //observe data that is passed at reference point/ posts reference
+        DatabaseService.shared.REF_BASE.child("users").observe(.value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                    print(snapshot)
+                    guard let postsSnapshot = PostsSnapshot(with: snapshot) else { return }
+                    print("POSTSNAP:\(postsSnapshot)")
+                    self.posts = postsSnapshot.posts
+                    print("POSTSNAP.POSTS:\(postsSnapshot)")
+                    //sorting posts in the proper order
+                    self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
+                    self.tableView.reloadData()
+                })
+                
+            }
+        }
+        
+        
         DatabaseService.shared.postsReference.observe(DataEventType.value, with: { (snapshot) in
             print(snapshot)
             //if this guard works, we have our posts
@@ -60,8 +78,6 @@ class ViewController: UIViewController {
         let post = UIAlertAction(title: "Signal", style: .default) { _ in
             guard let text = alert.textFields?.first?.text else { return }
             print(text)
-            
-            
           
             }
         alert.addAction(cancel)
@@ -89,7 +105,13 @@ class ViewController: UIViewController {
                           "date"         :dateString]
         
         //generates new ID for each post and set values in our database as parameters
-        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+//        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+            }
+        }
         
     }
 
@@ -98,9 +120,6 @@ class ViewController: UIViewController {
 
 //creating table view
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    
-
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
