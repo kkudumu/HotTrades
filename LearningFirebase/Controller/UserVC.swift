@@ -28,7 +28,8 @@ class UserVC: UIViewController {
         DatabaseService.shared.REF_BASE.child("users").observe(.value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
-                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
                     print(snapshot)
                     guard let postsSnapshot = PostsSnapshot(with: snapshot) else { return }
                     print("POSTSNAP:\(postsSnapshot)")
@@ -38,7 +39,7 @@ class UserVC: UIViewController {
                     self.posts.sort(by: { $0.date.compare($1.date) == .orderedDescending })
                     self.tableView.reloadData()
                 })
-                
+
             }
         }
     }
@@ -143,8 +144,28 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            posts.remove(at: indexPath.row)
-            tableView.reloadData()
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let post = self.posts[indexPath.row]
+            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).removeValue(completionBlock: { (error, ref) in
+                if error != nil {
+                    print("ERROR: ", error!)
+                    return
+                }
+//                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).observe(.childRemoved, with: { (snapshot) in
+//                    self.posts.remove(at: indexPath.row)
+//
+//                })
+                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
+                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
+                        self.posts.remove(at: index)
+                        self.tableView.reloadData()
+                    } else {
+                        print("item not found")
+                    }
+                })
+            })
+           
+            
         }
     }
     
