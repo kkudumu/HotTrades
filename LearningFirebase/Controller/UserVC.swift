@@ -18,7 +18,6 @@ class UserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -26,8 +25,7 @@ class UserVC: UIViewController {
         
         //observe data that is passed at reference point/ posts reference
         DatabaseService.shared.REF_BASE.child("users").observe(.value) { (snapshot) in
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
+
                 guard let uid = Auth.auth().currentUser?.uid else { return }
                 DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
                     print(snapshot)
@@ -40,7 +38,7 @@ class UserVC: UIViewController {
                     self.tableView.reloadData()
                 })
 
-            }
+            
         }
     }
 
@@ -132,8 +130,22 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        
+        let uid = Auth.auth().currentUser?.uid
+        let post = self.posts[indexPath.row]
+        
+        DatabaseService.shared.REF_BASE.child("users").child(uid!).child("posts").child(post.postId).child("isPending").observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.value as! String == "false" {
+                cell.backgroundColor = UIColor.white
+            } else if snapshot.value as! String == "true" {
+                cell.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            }
+            
+        })
         
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
@@ -142,8 +154,26 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let pending = UITableViewRowAction(style: .normal, title: "Pending") { (action, indexPath) in
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let post = self.posts[indexPath.row]
+            
+            
+            
+            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child("isPending").observeSingleEvent(of: .value, with: { (snapshot) in
+                if snapshot.value as! String == "false" {
+                    DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).updateChildValues(["isPending":"true"])
+                } else if snapshot.value as! String == "true" {
+                    print(snapshot.value as! String)
+                    DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).updateChildValues(["isPending":"false"])
+                }
+                
+            })
+            tableView.reloadData()
+        }
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
             DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).removeValue(completionBlock: { (error, ref) in
@@ -151,10 +181,6 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
                     print("ERROR: ", error!)
                     return
                 }
-//                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).observe(.childRemoved, with: { (snapshot) in
-//                    self.posts.remove(at: indexPath.row)
-//
-//                })
                 DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
                     if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
                         self.posts.remove(at: index)
@@ -164,10 +190,33 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
                     }
                 })
             })
-           
-            
         }
+    return [delete, pending]
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.delete {
+//            guard let uid = Auth.auth().currentUser?.uid else { return }
+//            let post = self.posts[indexPath.row]
+//            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).removeValue(completionBlock: { (error, ref) in
+//                if error != nil {
+//                    print("ERROR: ", error!)
+//                    return
+//                }
+//
+//                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
+//                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
+//                        self.posts.remove(at: index)
+//                        self.tableView.reloadData()
+//                    } else {
+//                        print("item not found")
+//                    }
+//                })
+//            })
+//
+//
+//        }
+//    }
     
 }
 
