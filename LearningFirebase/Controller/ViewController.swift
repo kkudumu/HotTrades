@@ -107,8 +107,12 @@ class ViewController: UIViewController {
     }
 }
 
+
+
 //creating table view
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -134,6 +138,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
         
+       
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -141,14 +147,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let closeAction = UIContextualAction(style: .normal, title: "Close") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdminTableViewCell", for: indexPath) as! AdminTableViewCell
+            UIPasteboard.general.string = cell.priceLabel.text
+            
+            success(true)
+        }
+        closeAction.title = "Copy"
+        closeAction.backgroundColor = .purple
+        
+        return UISwipeActionsConfiguration(actions: [closeAction])
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let pending = UITableViewRowAction(style: .normal, title: "Pending") { (action, indexPath) in
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
-            
-            
-            
             DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child("isPending").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.value as! String == "false" {
                     DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).updateChildValues(["isPending":"true"])

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserVC: UIViewController {
+class UserVC: UIViewController, UIGestureRecognizerDelegate {
     
     var posts = [Post]()
     var onCellTap: ((_ data: String) -> ())?
@@ -18,6 +18,9 @@ class UserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -42,6 +45,8 @@ class UserVC: UIViewController {
         }
     }
 
+
+    
     
     @IBAction func onUserLogOutTapped(_ sender: Any) {
         do {
@@ -59,8 +64,11 @@ class UserVC: UIViewController {
 
 
 
+
 //creating table view
 extension UserVC: UITableViewDataSource, UITableViewDelegate {
+    
+
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -130,10 +138,12 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        
+     
         
         let uid = Auth.auth().currentUser?.uid
         let post = self.posts[indexPath.row]
@@ -147,20 +157,35 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
             
         })
         
+
+        
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
         
+        //TODO
+        
+        
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let closeAction = UIContextualAction(style: .normal, title: "Close") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+            UIPasteboard.general.string = cell.priceLabel.text
+            
+            success(true)
+        }
+        closeAction.title = "Copy"
+        closeAction.backgroundColor = .purple
+        
+        return UISwipeActionsConfiguration(actions: [closeAction])
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let pending = UITableViewRowAction(style: .normal, title: "Pending") { (action, indexPath) in
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
-            
-            
             
             DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child("isPending").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.value as! String == "false" {
