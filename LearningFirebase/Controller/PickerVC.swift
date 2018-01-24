@@ -302,16 +302,17 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
 
     @IBAction func sendSignalTapped(_ sender: UIButton) {
         if pickerView != nil {
-            let storageRef = Storage.storage().reference().child("postImages").child("myImage.png")
+            let imageName = NSUUID().uuidString
+            let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).png")
             if let uploadData = UIImagePNGRepresentation(self.uploadImageView.image!) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error)
                         return
                     }
-                    let pathURL = metadata?.downloadURL()
-                    let pathString = pathURL?.path
-                    self.onSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathString!)
+                    let pathURL = metadata?.downloadURL()?.absoluteString
+//                    let pathString = pathURL?.path
+                    self.onSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathURL!)
                     print(metadata)
                 })
             }
