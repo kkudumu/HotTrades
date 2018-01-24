@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class Currency {
     var orders: String
@@ -19,16 +21,17 @@ class Currency {
 }
 
 
-class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
+    @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var priceTF: UITextField!
     @IBOutlet weak var signalButton: UIButton!
     
-
+    var imagePicker: UIImagePickerController!
     var currencies = [Currency]()
-    var onSave: ((_ orderData: String,_ pairData: String, _ priceData: String) -> ())?
+    var onSave: ((_ orderData: String,_ pairData: String, _ priceData: String, _ imageUrl: String) -> ())?
     
     
     override func viewDidLoad() {
@@ -209,7 +212,11 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                                                                    "USD/CHF",
                                                                    "USD/JPY"
                                                                 ]))
-
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
         pickerView.dataSource = self
         pickerView.delegate = self
 
@@ -267,10 +274,47 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            uploadImageView.image = image
+//            let imageUploadManager = ImageUploadManager()
+//            imageUploadManager.uploadImage(image, progressBlock: { (percentage) in
+//                print(percentage)
+//            }, completionBlock: { (fileURL, errorMessage) in
+//                print(fileURL)
+//                print(errorMessage)
+//            })
+        } else {
+            print("A valid image wasn't selected")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addImageTapped(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 
     @IBAction func sendSignalTapped(_ sender: UIButton) {
         if pickerView != nil {
-            onSave?(pickerOrders, pickerPairs, priceTF.text!)
+            let storageRef = Storage.storage().reference().child("postImages").child("myImage.png")
+            if let uploadData = UIImagePNGRepresentation(self.uploadImageView.image!) {
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    let pathURL = metadata?.downloadURL()
+                    let pathString = pathURL?.path
+                    self.onSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathString!)
+                    print(metadata)
+                })
+            }
         }
         dismiss(animated: true)
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Post {
     
@@ -15,6 +16,7 @@ struct Post {
     let pair: String
     let price: String
     let date: Date
+    
     
     init?(postId: String, dict: [String: Any]) {
         self.postId = postId
@@ -33,6 +35,7 @@ struct Post {
         self.price = price
         self.pair = pair
         self.date = date
+        
     }
     
 }

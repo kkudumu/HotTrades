@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     
     
     //grab data from our picker and save to firebase
-    func onSave(_ orderData: String,_ pairData: String, _ priceData: String) -> () {
+    func onSave(_ orderData: String,_ pairData: String, _ priceData: String, imageURL: String) -> () {
         
         let dateString = String(describing: Date())
         
@@ -93,6 +93,7 @@ class ViewController: UIViewController {
                           "pair"         :pairData,
                           "price"        :priceData,
                           "date"         :dateString,
+                          "imageURL"     :imageURL,
                           "isPending"    :"false"]
         
         //generates new ID for each post and set values in our database as parameters

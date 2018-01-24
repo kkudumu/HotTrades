@@ -11,5 +11,6 @@ target 'LearningFirebase' do
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   pod 'SwipeCellKit'
+  pod 'Firebase/Storage'
 
 end
