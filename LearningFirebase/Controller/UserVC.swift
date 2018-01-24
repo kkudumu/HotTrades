@@ -19,8 +19,6 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -45,8 +43,6 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-
-    
     
     @IBAction func onUserLogOutTapped(_ sender: Any) {
         do {
@@ -70,7 +66,9 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
 extension UserVC: UITableViewDataSource, UITableViewDelegate {
     
 
-   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath) as! UserTableViewCell
@@ -93,15 +91,10 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
-    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
-        
-     
-        
         let uid = Auth.auth().currentUser?.uid
         let post = self.posts[indexPath.row]
         
@@ -117,14 +110,14 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.imageView?.contentMode = .scaleAspectFill
         if let postImageURL = post.imageURL {
-            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
-            cell.postImageView.image = photoThumbnail
+            let url = URL(string: postImageURL)
+            cell.postImageView.kf.setImage(with: url)
+//            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
+            
+            ////something different
+//            cell.postImageView.image = photoThumbnail
         }
 
-
-        
-
-        
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
@@ -178,6 +171,7 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
                 DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
                     if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
                         self.posts.remove(at: index)
+//                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadData"), object: self)
                         self.tableView.reloadData()
                     } else {
                         print("item not found")
@@ -188,29 +182,6 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
     return [delete, pending]
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCellEditingStyle.delete {
-//            guard let uid = Auth.auth().currentUser?.uid else { return }
-//            let post = self.posts[indexPath.row]
-//            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).removeValue(completionBlock: { (error, ref) in
-//                if error != nil {
-//                    print("ERROR: ", error!)
-//                    return
-//                }
-//
-//                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
-//                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
-//                        self.posts.remove(at: index)
-//                        self.tableView.reloadData()
-//                    } else {
-//                        print("item not found")
-//                    }
-//                })
-//            })
-//
-//
-//        }
-//    }
     
 }
 

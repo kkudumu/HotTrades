@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -57,22 +58,7 @@ class ViewController: UIViewController {
     
     //Creating text fields to pop up for Chipp to add signals.
     @IBAction func onAddTapped(_ sender: Any) {
-      
-        
-        let alert = UIAlertController(title: "Add A Signal", message: "What Signal Would You Like To Add?", preferredStyle: .alert)
-        
-        alert.addTextField { (textField) in
-            textField.placeholder = "Enter signal here"
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let post = UIAlertAction(title: "Signal", style: .default) { _ in
-            guard let text = alert.textFields?.first?.text else { return }
-            print(text)
-          
-            }
-        alert.addAction(cancel)
-        alert.addAction(post)
-//        present(alert, animated: true, completion: nil)
+
         performSegue(withIdentifier: "ToPickerVC", sender: self)
     }
     
@@ -152,7 +138,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
 
         if let postImageURL = post.imageURL {
-            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
+            let url = URL(string: postImageURL)
+            cell.postImageView.kf.setImage(with: url)
+//            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
 
         }
         
@@ -181,7 +169,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let pending = UITableViewRowAction(style: .normal, title: "Pending") { (action, indexPath) in
-            
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
             DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child("isPending").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -211,6 +198,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                         self.tableView.reloadData()
                     } else {
                         print("item not found")
+                        self.tableView.reloadData()
                     }
                 })
             })
@@ -218,29 +206,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return [delete, pending]
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCellEditingStyle.delete {
-//            guard let uid = Auth.auth().currentUser?.uid else { return }
-//            let post = self.posts[indexPath.row]
-//            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).removeValue(completionBlock: { (error, ref) in
-//                if error != nil {
-//                    print("ERROR: ", error!)
-//                    return
-//                }
-//
-//                DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
-//                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
-//                        self.posts.remove(at: index)
-//                        self.tableView.reloadData()
-//                    } else {
-//                        print("item not found")
-//                    }
-//                })
-//            })
-//
-//
-//        }
-//    }
+
 
 }
 

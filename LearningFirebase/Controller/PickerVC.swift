@@ -278,13 +278,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             uploadImageView.image = image
-//            let imageUploadManager = ImageUploadManager()
-//            imageUploadManager.uploadImage(image, progressBlock: { (percentage) in
-//                print(percentage)
-//            }, completionBlock: { (fileURL, errorMessage) in
-//                print(fileURL)
-//                print(errorMessage)
-//            })
+
         } else {
             print("A valid image wasn't selected")
         }
@@ -303,9 +297,12 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     @IBAction func sendSignalTapped(_ sender: UIButton) {
         if pickerView != nil {
             let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).png")
+            let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             guard let imageUploadCheck = self.uploadImageView.image else {return}
-            if let uploadData = UIImagePNGRepresentation(imageUploadCheck) {
+            
+            
+            
+            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.1 ) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error)
