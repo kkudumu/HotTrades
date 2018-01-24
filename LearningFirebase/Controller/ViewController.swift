@@ -113,6 +113,9 @@ class ViewController: UIViewController {
 //creating table view
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,6 +137,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
         })
+        
+//        cell.imageView?.image = UIImage(named: "icons8-notification-500")
+        if let postImageURL = post.imageURL {
+            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
+            
+//            let url = URL(string: postImageURL)
+//            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+//                if error != nil {
+//                    print(error)
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                   cell.postImageView.image = UIImage(data: data!)
+//                }
+//
+//            }).resume()
+        }
         
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair

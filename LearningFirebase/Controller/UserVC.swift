@@ -138,7 +138,9 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
@@ -156,6 +158,33 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
             }
             
         })
+
+        
+        cell.imageView?.contentMode = .scaleAspectFill
+        if let postImageURL = post.imageURL {
+            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
+//            let url = URL(string: postImageURL)
+//            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+//                if error != nil {
+//                    print(error)
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                    cell.postImageView.image = UIImage(data: data!)
+////                    cell.imageView?.image = UIImage(data: data!)
+//                }
+//
+//            }).resume()
+        }
+//        let postImageView: UIImageView = {
+//            let imageView = UIImageView()
+//            imageView.image = UIImage(named: "icons8-notification-500")
+//            imageView.translatesAutoresizingMaskIntoConstraints = false
+////            imageView.layer.cornerRadius = 20
+//            imageView.layer.masksToBounds = true
+//            return imageView
+//        }()
+
         
 
         

@@ -304,7 +304,8 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         if pickerView != nil {
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).png")
-            if let uploadData = UIImagePNGRepresentation(self.uploadImageView.image!) {
+            guard let imageUploadCheck = self.uploadImageView.image else {return}
+            if let uploadData = UIImagePNGRepresentation(imageUploadCheck) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error)

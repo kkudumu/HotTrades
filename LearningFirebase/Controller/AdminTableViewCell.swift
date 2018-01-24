@@ -14,9 +14,26 @@ class AdminTableViewCell: UITableViewCell {
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    let postImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        //        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        
+        addSubview(postImageView)
+        
+        postImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        postImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        postImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        postImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -15,6 +15,7 @@
 		330292E020098B14003C6420 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330292DF20098B14003C6420 /* Post.swift */; };
 		330292E220098D4B003C6420 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 330292E120098D4A003C6420 /* GoogleService-Info.plist */; };
 		3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EC201824E7009773DE /* ImageUploadManager.swift */; };
+		3345D8EF20187476009773DE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EE20187476009773DE /* Extensions.swift */; };
 		335D245A201007590090930D /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D2459201007590090930D /* ChartVC.swift */; };
 		335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D245B20102E800090930D /* AdminTableViewCell.swift */; };
 		336C442A20098F0B00A47A86 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C442920098F0B00A47A86 /* DatabaseService.swift */; };
@@ -71,6 +72,7 @@
 		330292DF20098B14003C6420 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		330292E120098D4A003C6420 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3345D8EC201824E7009773DE /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
+		3345D8EE20187476009773DE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		335D2459201007590090930D /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		335D245B20102E800090930D /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
 		336C442920098F0B00A47A86 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				338777322010482B006EF11A /* UserTableViewCell.swift */,
 				338777342010603B006EF11A /* PickerVC.swift */,
 				3345D8EC201824E7009773DE /* ImageUploadManager.swift */,
+				3345D8EE20187476009773DE /* Extensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */,
 				33DEE8512011D6B4005E1997 /* CadChfVC.swift in Sources */,
 				335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */,
+				3345D8EF20187476009773DE /* Extensions.swift in Sources */,
 				33DEE84F2011D69B005E1997 /* AudNzdVC.swift in Sources */,
 				33DEE8692011D7BA005E1997 /* GbpChfVC.swift in Sources */,
 				33DEE8652011D799005E1997 /* GbpAudVC.swift in Sources */,
