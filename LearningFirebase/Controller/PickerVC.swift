@@ -214,7 +214,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                                                                 ]))
         
         imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
+//        imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
         pickerView.dataSource = self
@@ -276,7 +276,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             uploadImageView.image = image
 //            let imageUploadManager = ImageUploadManager()
 //            imageUploadManager.uploadImage(image, progressBlock: { (percentage) in

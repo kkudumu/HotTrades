@@ -44,7 +44,7 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
             
         }
     }
-
+    
 
     
     
@@ -60,6 +60,7 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func onSubscribeTapped() {
         AlertController.subscribeAlert(in: self)
     }
+     var photoThumbnail: UIImage!
 }
 
 
@@ -69,67 +70,21 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
 extension UserVC: UITableViewDataSource, UITableViewDelegate {
     
 
-    
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if posts[indexPath.row].pair == "AUD/CAD" {
-            performSegue(withIdentifier: "TOAUDCAD", sender: self)
-        } else if posts[indexPath.row].pair == "AUD/CHF" {
-            performSegue(withIdentifier: "TOAUDCHF", sender: self)
-        } else if posts[indexPath.row].pair == "AUD/JPY" {
-            performSegue(withIdentifier: "TOAUDJPY", sender: self)
-        } else if posts[indexPath.row].pair == "AUD/NZD" {
-            performSegue(withIdentifier: "TOAUDNZD", sender: self)
-        } else if posts[indexPath.row].pair == "AUD/USD" {
-            performSegue(withIdentifier: "TOAUDUSD", sender: self)
-        } else if posts[indexPath.row].pair == "CAD/CHF" {
-            performSegue(withIdentifier: "TOCADCHF", sender: self)
-        } else if posts[indexPath.row].pair == "CAD/JPY" {
-            performSegue(withIdentifier: "TOCADJPY", sender: self)
-        } else if posts[indexPath.row].pair == "CHF/JPY" {
-            performSegue(withIdentifier: "TOCHFJPY", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/AUD" {
-            performSegue(withIdentifier: "TOEURAUD", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/CAD" {
-            performSegue(withIdentifier: "TOEURCAD", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/CHF" {
-            performSegue(withIdentifier: "TOEURCHF", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/GBP" {
-            performSegue(withIdentifier: "TOEURGBP", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/JPY" {
-            performSegue(withIdentifier: "TOEURJPY", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/NZD" {
-            performSegue(withIdentifier: "TOEURNZD", sender: self)
-        } else if posts[indexPath.row].pair == "EUR/USD" {
-            performSegue(withIdentifier: "TOEURUSD", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/AUD" {
-            performSegue(withIdentifier: "TOGBPAUD", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/CAD" {
-            performSegue(withIdentifier: "TOGBPCAD", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/CHF" {
-            performSegue(withIdentifier: "TOGBPCHF", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/JPY" {
-            performSegue(withIdentifier: "TOGBPJPY", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/NZD" {
-            performSegue(withIdentifier: "TOGBPNZD", sender: self)
-        } else if posts[indexPath.row].pair == "GBP/USD" {
-            performSegue(withIdentifier: "TOGBPUSD", sender: self)
-        } else if posts[indexPath.row].pair == "NZD/CAD" {
-            performSegue(withIdentifier: "TONZDCAD", sender: self)
-        } else if posts[indexPath.row].pair == "NZD/CHF" {
-            performSegue(withIdentifier: "TONZDCHF", sender: self)
-        } else if posts[indexPath.row].pair == "NZD/JPY" {
-            performSegue(withIdentifier: "TONZDJPY", sender: self)
-        } else if posts[indexPath.row].pair == "NZD/USD" {
-            performSegue(withIdentifier: "TONZDUSD", sender: self)
-        } else if posts[indexPath.row].pair == "USD/CAD" {
-            performSegue(withIdentifier: "TOUSDCAD", sender: self)
-        } else if posts[indexPath.row].pair == "USD/CHF" {
-            performSegue(withIdentifier: "TOUSDCHF", sender: self)
-        } else if posts[indexPath.row].pair == "USD/JPY" {
-            performSegue(withIdentifier: "TOUSDJPY", sender: self)
-        }
+            let cell = tableView.cellForRow(at: indexPath) as! UserTableViewCell
+            photoThumbnail = cell.postImageView.image
+            performSegue(withIdentifier: "ToChartImage", sender: self)
     }
+    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ToChartImage" {
+        let destViewController: ChartImageController = segue.destination as! ChartImageController
+        destViewController.newImage = photoThumbnail
+        shouldPerformSegue(withIdentifier: "ToChartImage", sender: Any?.self)
+    }
+}
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -163,27 +118,9 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         cell.imageView?.contentMode = .scaleAspectFill
         if let postImageURL = post.imageURL {
             cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
-//            let url = URL(string: postImageURL)
-//            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-//                if error != nil {
-//                    print(error)
-//                    return
-//                }
-//                DispatchQueue.main.async {
-//                    cell.postImageView.image = UIImage(data: data!)
-////                    cell.imageView?.image = UIImage(data: data!)
-//                }
-//
-//            }).resume()
+            cell.postImageView.image = photoThumbnail
         }
-//        let postImageView: UIImageView = {
-//            let imageView = UIImageView()
-//            imageView.image = UIImage(named: "icons8-notification-500")
-//            imageView.translatesAutoresizingMaskIntoConstraints = false
-////            imageView.layer.cornerRadius = 20
-//            imageView.layer.masksToBounds = true
-//            return imageView
-//        }()
+
 
         
 
@@ -194,10 +131,13 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         
         //TODO
         
-        
+ 
         
         return cell
     }
+    
+ 
+    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let closeAction = UIContextualAction(style: .normal, title: "Close") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell

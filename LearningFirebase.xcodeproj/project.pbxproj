@@ -29,34 +29,8 @@
 		33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFA8200C5E23004BC19D /* UserVC.swift */; };
 		33C3AFAB200C6261004BC19D /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAA200C6261004BC19D /* UNService.swift */; };
 		33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAD200C7799004BC19D /* MessagingService.swift */; };
-		33DEE8472011D605005E1997 /* AudUsdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8462011D605005E1997 /* AudUsdVC.swift */; };
-		33DEE8492011D63B005E1997 /* AudCadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8482011D63B005E1997 /* AudCadVC.swift */; };
-		33DEE84B2011D651005E1997 /* AudChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE84A2011D651005E1997 /* AudChfVC.swift */; };
-		33DEE84D2011D669005E1997 /* AudJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE84C2011D669005E1997 /* AudJpyVC.swift */; };
-		33DEE84F2011D69B005E1997 /* AudNzdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE84E2011D69B005E1997 /* AudNzdVC.swift */; };
-		33DEE8512011D6B4005E1997 /* CadChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8502011D6B4005E1997 /* CadChfVC.swift */; };
-		33DEE8532011D6C2005E1997 /* CadJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8522011D6C2005E1997 /* CadJpyVC.swift */; };
-		33DEE8552011D6D0005E1997 /* ChfJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8542011D6D0005E1997 /* ChfJpyVC.swift */; };
-		33DEE8572011D6E8005E1997 /* EurAudVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8562011D6E8005E1997 /* EurAudVC.swift */; };
-		33DEE8592011D704005E1997 /* EurCadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8582011D704005E1997 /* EurCadVC.swift */; };
-		33DEE85B2011D728005E1997 /* EurChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE85A2011D728005E1997 /* EurChfVC.swift */; };
-		33DEE85D2011D74E005E1997 /* EurGbpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE85C2011D74E005E1997 /* EurGbpVC.swift */; };
-		33DEE85F2011D76A005E1997 /* EurJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE85E2011D76A005E1997 /* EurJpyVC.swift */; };
-		33DEE8612011D779005E1997 /* EurNzdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8602011D779005E1997 /* EurNzdVC.swift */; };
-		33DEE8632011D78A005E1997 /* EurUsdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8622011D78A005E1997 /* EurUsdVC.swift */; };
-		33DEE8652011D799005E1997 /* GbpAudVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8642011D799005E1997 /* GbpAudVC.swift */; };
-		33DEE8672011D7A8005E1997 /* GbpCadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8662011D7A8005E1997 /* GbpCadVC.swift */; };
-		33DEE8692011D7BA005E1997 /* GbpChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8682011D7BA005E1997 /* GbpChfVC.swift */; };
-		33DEE86B2011D7CF005E1997 /* GbpJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE86A2011D7CF005E1997 /* GbpJpyVC.swift */; };
-		33DEE86D2011D7E0005E1997 /* GbpNzdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE86C2011D7E0005E1997 /* GbpNzdVC.swift */; };
-		33DEE8712011D805005E1997 /* GbpUsdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8702011D805005E1997 /* GbpUsdVC.swift */; };
-		33DEE8732011D819005E1997 /* NzdCadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8722011D819005E1997 /* NzdCadVC.swift */; };
-		33DEE8752011D82C005E1997 /* NzdChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8742011D82C005E1997 /* NzdChfVC.swift */; };
-		33DEE8772011D843005E1997 /* NzdJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8762011D843005E1997 /* NzdJpyVC.swift */; };
-		33DEE8792011D860005E1997 /* NzdUsdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8782011D860005E1997 /* NzdUsdVC.swift */; };
-		33DEE87B2011D872005E1997 /* UsdCadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE87A2011D872005E1997 /* UsdCadVC.swift */; };
-		33DEE87D2011D881005E1997 /* UsdChfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE87C2011D881005E1997 /* UsdChfVC.swift */; };
-		33DEE87F2011D88C005E1997 /* UsdJpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE87E2011D88C005E1997 /* UsdJpyVC.swift */; };
+		33D3B55720187E750069F2A2 /* ChartImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D3B55620187E750069F2A2 /* ChartImageController.swift */; };
+		33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8462011D605005E1997 /* WebViewRef.swift */; };
 		FCBFD7A050F7F2A0F1E950A2 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,34 +61,8 @@
 		33C3AFAA200C6261004BC19D /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		33C3AFAC200C65D1004BC19D /* LearningFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearningFirebase.entitlements; sourceTree = "<group>"; };
 		33C3AFAD200C7799004BC19D /* MessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingService.swift; sourceTree = "<group>"; };
-		33DEE8462011D605005E1997 /* AudUsdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudUsdVC.swift; sourceTree = "<group>"; };
-		33DEE8482011D63B005E1997 /* AudCadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudCadVC.swift; sourceTree = "<group>"; };
-		33DEE84A2011D651005E1997 /* AudChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudChfVC.swift; sourceTree = "<group>"; };
-		33DEE84C2011D669005E1997 /* AudJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudJpyVC.swift; sourceTree = "<group>"; };
-		33DEE84E2011D69B005E1997 /* AudNzdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudNzdVC.swift; sourceTree = "<group>"; };
-		33DEE8502011D6B4005E1997 /* CadChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadChfVC.swift; sourceTree = "<group>"; };
-		33DEE8522011D6C2005E1997 /* CadJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadJpyVC.swift; sourceTree = "<group>"; };
-		33DEE8542011D6D0005E1997 /* ChfJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChfJpyVC.swift; sourceTree = "<group>"; };
-		33DEE8562011D6E8005E1997 /* EurAudVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurAudVC.swift; sourceTree = "<group>"; };
-		33DEE8582011D704005E1997 /* EurCadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurCadVC.swift; sourceTree = "<group>"; };
-		33DEE85A2011D728005E1997 /* EurChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurChfVC.swift; sourceTree = "<group>"; };
-		33DEE85C2011D74E005E1997 /* EurGbpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurGbpVC.swift; sourceTree = "<group>"; };
-		33DEE85E2011D76A005E1997 /* EurJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurJpyVC.swift; sourceTree = "<group>"; };
-		33DEE8602011D779005E1997 /* EurNzdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurNzdVC.swift; sourceTree = "<group>"; };
-		33DEE8622011D78A005E1997 /* EurUsdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdVC.swift; sourceTree = "<group>"; };
-		33DEE8642011D799005E1997 /* GbpAudVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpAudVC.swift; sourceTree = "<group>"; };
-		33DEE8662011D7A8005E1997 /* GbpCadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpCadVC.swift; sourceTree = "<group>"; };
-		33DEE8682011D7BA005E1997 /* GbpChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpChfVC.swift; sourceTree = "<group>"; };
-		33DEE86A2011D7CF005E1997 /* GbpJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpJpyVC.swift; sourceTree = "<group>"; };
-		33DEE86C2011D7E0005E1997 /* GbpNzdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpNzdVC.swift; sourceTree = "<group>"; };
-		33DEE8702011D805005E1997 /* GbpUsdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GbpUsdVC.swift; sourceTree = "<group>"; };
-		33DEE8722011D819005E1997 /* NzdCadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NzdCadVC.swift; sourceTree = "<group>"; };
-		33DEE8742011D82C005E1997 /* NzdChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NzdChfVC.swift; sourceTree = "<group>"; };
-		33DEE8762011D843005E1997 /* NzdJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NzdJpyVC.swift; sourceTree = "<group>"; };
-		33DEE8782011D860005E1997 /* NzdUsdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NzdUsdVC.swift; sourceTree = "<group>"; };
-		33DEE87A2011D872005E1997 /* UsdCadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsdCadVC.swift; sourceTree = "<group>"; };
-		33DEE87C2011D881005E1997 /* UsdChfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsdChfVC.swift; sourceTree = "<group>"; };
-		33DEE87E2011D88C005E1997 /* UsdJpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsdJpyVC.swift; sourceTree = "<group>"; };
+		33D3B55620187E750069F2A2 /* ChartImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartImageController.swift; sourceTree = "<group>"; };
+		33DEE8462011D605005E1997 /* WebViewRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRef.swift; sourceTree = "<group>"; };
 		99E3916B9FB021FA26B0D187 /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,7 +115,7 @@
 		33A4DFF02009CD4B000A6E30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33DEE8802011D890005E1997 /* CurrencyVCs */,
+				33DEE8462011D605005E1997 /* WebViewRef.swift */,
 				33A4DFF82009DC06000A6E30 /* AlertController.swift */,
 				330292CF20098568003C6420 /* ViewController.swift */,
 				33A4DFEE2009CD41000A6E30 /* SignInVC.swift */,
@@ -180,6 +128,7 @@
 				338777342010603B006EF11A /* PickerVC.swift */,
 				3345D8EC201824E7009773DE /* ImageUploadManager.swift */,
 				3345D8EE20187476009773DE /* Extensions.swift */,
+				33D3B55620187E750069F2A2 /* ChartImageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,41 +160,6 @@
 				330292D620098568003C6420 /* LaunchScreen.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		33DEE8802011D890005E1997 /* CurrencyVCs */ = {
-			isa = PBXGroup;
-			children = (
-				33DEE8462011D605005E1997 /* AudUsdVC.swift */,
-				33DEE8482011D63B005E1997 /* AudCadVC.swift */,
-				33DEE84A2011D651005E1997 /* AudChfVC.swift */,
-				33DEE84C2011D669005E1997 /* AudJpyVC.swift */,
-				33DEE84E2011D69B005E1997 /* AudNzdVC.swift */,
-				33DEE8502011D6B4005E1997 /* CadChfVC.swift */,
-				33DEE8522011D6C2005E1997 /* CadJpyVC.swift */,
-				33DEE8542011D6D0005E1997 /* ChfJpyVC.swift */,
-				33DEE8562011D6E8005E1997 /* EurAudVC.swift */,
-				33DEE8582011D704005E1997 /* EurCadVC.swift */,
-				33DEE85A2011D728005E1997 /* EurChfVC.swift */,
-				33DEE85C2011D74E005E1997 /* EurGbpVC.swift */,
-				33DEE85E2011D76A005E1997 /* EurJpyVC.swift */,
-				33DEE8602011D779005E1997 /* EurNzdVC.swift */,
-				33DEE8622011D78A005E1997 /* EurUsdVC.swift */,
-				33DEE8642011D799005E1997 /* GbpAudVC.swift */,
-				33DEE8662011D7A8005E1997 /* GbpCadVC.swift */,
-				33DEE8682011D7BA005E1997 /* GbpChfVC.swift */,
-				33DEE86A2011D7CF005E1997 /* GbpJpyVC.swift */,
-				33DEE86C2011D7E0005E1997 /* GbpNzdVC.swift */,
-				33DEE8702011D805005E1997 /* GbpUsdVC.swift */,
-				33DEE8722011D819005E1997 /* NzdCadVC.swift */,
-				33DEE8742011D82C005E1997 /* NzdChfVC.swift */,
-				33DEE8762011D843005E1997 /* NzdJpyVC.swift */,
-				33DEE8782011D860005E1997 /* NzdUsdVC.swift */,
-				33DEE87A2011D872005E1997 /* UsdCadVC.swift */,
-				33DEE87C2011D881005E1997 /* UsdChfVC.swift */,
-				33DEE87E2011D88C005E1997 /* UsdJpyVC.swift */,
-			);
-			path = CurrencyVCs;
 			sourceTree = "<group>";
 		};
 		CB6521003D804108E620CD47 /* Frameworks */ = {
@@ -398,50 +312,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				338777352010603B006EF11A /* PickerVC.swift in Sources */,
-				33DEE85B2011D728005E1997 /* EurChfVC.swift in Sources */,
-				33DEE8612011D779005E1997 /* EurNzdVC.swift in Sources */,
 				33A4DFF32009CD91000A6E30 /* SignUpVC.swift in Sources */,
-				33DEE8592011D704005E1997 /* EurCadVC.swift in Sources */,
-				33DEE87D2011D881005E1997 /* UsdChfVC.swift in Sources */,
 				330292E020098B14003C6420 /* Post.swift in Sources */,
 				330292D020098568003C6420 /* ViewController.swift in Sources */,
 				33A4DFEF2009CD41000A6E30 /* SignInVC.swift in Sources */,
 				338777332010482B006EF11A /* UserTableViewCell.swift in Sources */,
-				33DEE8772011D843005E1997 /* NzdJpyVC.swift in Sources */,
-				33DEE86B2011D7CF005E1997 /* GbpJpyVC.swift in Sources */,
-				33DEE8552011D6D0005E1997 /* ChfJpyVC.swift in Sources */,
 				33C3AFAB200C6261004BC19D /* UNService.swift in Sources */,
 				33A4DFF92009DC06000A6E30 /* AlertController.swift in Sources */,
 				335D245A201007590090930D /* ChartVC.swift in Sources */,
 				336C442C20099F9E00A47A86 /* PostsSnapshot.swift in Sources */,
 				336C442A20098F0B00A47A86 /* DatabaseService.swift in Sources */,
-				33DEE8732011D819005E1997 /* NzdCadVC.swift in Sources */,
-				33DEE8752011D82C005E1997 /* NzdChfVC.swift in Sources */,
 				33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */,
-				33DEE8572011D6E8005E1997 /* EurAudVC.swift in Sources */,
-				33DEE8672011D7A8005E1997 /* GbpCadVC.swift in Sources */,
-				33DEE8792011D860005E1997 /* NzdUsdVC.swift in Sources */,
-				33DEE86D2011D7E0005E1997 /* GbpNzdVC.swift in Sources */,
-				33DEE87B2011D872005E1997 /* UsdCadVC.swift in Sources */,
 				33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */,
-				33DEE8512011D6B4005E1997 /* CadChfVC.swift in Sources */,
+				33D3B55720187E750069F2A2 /* ChartImageController.swift in Sources */,
 				335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */,
 				3345D8EF20187476009773DE /* Extensions.swift in Sources */,
-				33DEE84F2011D69B005E1997 /* AudNzdVC.swift in Sources */,
-				33DEE8692011D7BA005E1997 /* GbpChfVC.swift in Sources */,
-				33DEE8652011D799005E1997 /* GbpAudVC.swift in Sources */,
-				33DEE8492011D63B005E1997 /* AudCadVC.swift in Sources */,
-				33DEE84D2011D669005E1997 /* AudJpyVC.swift in Sources */,
 				3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */,
-				33DEE8532011D6C2005E1997 /* CadJpyVC.swift in Sources */,
-				33DEE8632011D78A005E1997 /* EurUsdVC.swift in Sources */,
-				33DEE85D2011D74E005E1997 /* EurGbpVC.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
-				33DEE84B2011D651005E1997 /* AudChfVC.swift in Sources */,
-				33DEE8472011D605005E1997 /* AudUsdVC.swift in Sources */,
-				33DEE8712011D805005E1997 /* GbpUsdVC.swift in Sources */,
-				33DEE87F2011D88C005E1997 /* UsdJpyVC.swift in Sources */,
-				33DEE85F2011D76A005E1997 /* EurJpyVC.swift in Sources */,
+				33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */,
 				33AA44A8200ED6B500468484 /* ResetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
