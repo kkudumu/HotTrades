@@ -3,7 +3,7 @@ let admin = require('firebase-admin')
 admin.initializeApp(functions.config().firebase)
 
 exports.announcePost = functions.database
-    .ref('posts/{postId}')
+    .ref('users/{userID}/posts/{postId}')
     .onCreate(event => {
         let posts = event.data.val()
         sendNotification(posts)
@@ -13,11 +13,12 @@ exports.announcePost = functions.database
         let signal = posts.signal
         let pair = posts.pair
         let price = posts.price
+        
 
         let payload = {
             notification: {
                 title: 'New Signal Available',
-                body: signal + "  " + pair + "  " + price,
+                body:  signal + "  " + pair + "  " + price,
                 sound: 'default'
             }
         }
