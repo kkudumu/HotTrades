@@ -5,7 +5,7 @@ admin.initializeApp(functions.config().firebase)
 
 
 exports.announcePost = functions.database
-    .ref('users/zsackNWBepZ1iq0dVFYBlPLKEMZ2/posts/{postId}')
+    .ref('posts_for_notifications/{postId}')
     .onCreate(event => {
         let posts = event.data.val()
         sendNotification(posts)

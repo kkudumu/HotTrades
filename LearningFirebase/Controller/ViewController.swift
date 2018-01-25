@@ -94,6 +94,7 @@ class ViewController: UIViewController {
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
             }
         }
+        DatabaseService.shared.REF_BASE.child("posts_for_notifications").childByAutoId().setValue(parameters)
         
     }
     var photoThumbnail: UIImage!
