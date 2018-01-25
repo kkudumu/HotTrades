@@ -47,6 +47,8 @@ extension UNService: UNUserNotificationCenterDelegate {
         
         let options: UNNotificationPresentationOptions = [.alert, .sound]
         completionHandler(options)
+        
+        
     }
     
 }

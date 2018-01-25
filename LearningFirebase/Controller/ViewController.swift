@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
 //        guard let firstLast = Auth.auth().currentUser?.displayName else { return }
@@ -59,7 +61,6 @@ class ViewController: UIViewController {
     //Creating text fields to pop up for Chipp to add signals.
     @IBAction func onAddTapped(_ sender: Any) {
 
-        performSegue(withIdentifier: "ToPickerVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

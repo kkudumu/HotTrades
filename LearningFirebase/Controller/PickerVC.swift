@@ -37,6 +37,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         currencies.append(Currency(orders: "BUY", pairs:["AUD/CAD",
                                                          "AUD/CHF",
                                                          "AUD/JPY",
