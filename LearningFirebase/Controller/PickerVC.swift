@@ -229,6 +229,10 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         return 2
     }
     
+    @IBAction func exitButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if component == 0 {
@@ -318,7 +322,6 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                 })
             }
         }
-        dismiss(animated: true)
     }
     
     @IBAction func freeSignalTapped(_ sender: UIButton) {
@@ -342,9 +345,11 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                 })
             }
         }
-        dismiss(animated: true)
     }
     
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     

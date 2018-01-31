@@ -11,6 +11,7 @@ import FirebaseMessaging
 
 enum SubscriptionTopic: String {
     case newPosts = "newPosts"
+    case freePosts = "freePosts"
 }
 class MessagingService {
     

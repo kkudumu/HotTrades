@@ -17,17 +17,34 @@ class AlertController {
         alert.addAction(action)
         inViewController.present(alert, animated: true, completion: nil)
     }
+    //subscribed user notifications
     static func subscribeAlert(in vc: UIViewController) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let subscribe = UIAlertAction(title: "Subscribe", style: .default) { (_) in
+        let subscribe = UIAlertAction(title: "On", style: .default) { (_) in
             MessagingService.shared.subscribe(to: .newPosts)
+            MessagingService.shared.unsubscribe(from: .freePosts)
         }
-        let unsubscribe = UIAlertAction(title: "Unsubscribe", style: .default) { (_) in
+        let unsubscribe = UIAlertAction(title: "Off", style: .default) { (_) in
+            MessagingService.shared.unsubscribe(from: .newPosts)
+            MessagingService.shared.unsubscribe(from: .freePosts)
+        }
+        alert.addAction(subscribe)
+        alert.addAction(unsubscribe)
+        vc.present(alert, animated: true)
+    }
+    //free user notifications
+    static func subscribeFreeAlert(in vc: UIViewController) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let subscribe = UIAlertAction(title: "On", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .freePosts)
+            MessagingService.shared.unsubscribe(from: .newPosts)
+        }
+        let unsubscribe = UIAlertAction(title: "Off", style: .default) { (_) in
+            MessagingService.shared.unsubscribe(from: .freePosts)
             MessagingService.shared.unsubscribe(from: .newPosts)
         }
         alert.addAction(subscribe)
         alert.addAction(unsubscribe)
         vc.present(alert, animated: true)
     }
-    
 }

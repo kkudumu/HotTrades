@@ -54,7 +54,7 @@ class FreeUserVC: UIViewController {
     }
     
     @IBAction func onSubscribeTapped() {
-        AlertController.subscribeAlert(in: self)
+        AlertController.subscribeFreeAlert(in: self)
     }
     var photoThumbnail: UIImage!
 }

@@ -66,8 +66,9 @@ class SubChoiceVC: UIViewController {
                         print("*********** SHOULD GO TO USER VC ***********")
                         if snapshot.value as! String == "free_user" {
                             DatabaseService.shared.REF_BASE.child("users").child(uid!).updateChildValues(["role":"subscribed_user"])
-                            self.performSegue(withIdentifier: "ToUserVC", sender: self)
                             
+                        } else if snapshot.value as! String == "subscribed_user" {
+                            self.performSegue(withIdentifier: "ToUserVC", sender: self)
                         }
                         print("\(productId) is valid until \(expiryDate)\n\(items)\n")
                         print("*********** USER SHOULD HAVE GONE TO USER VC *************")

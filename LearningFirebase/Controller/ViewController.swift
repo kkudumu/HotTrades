@@ -98,7 +98,7 @@ class ViewController: UIViewController {
                     } else if snapshot.value as! String == "admin" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
                     }
-                    //todo: control free user posts
+                  
             }
         }
     }
@@ -132,7 +132,6 @@ class ViewController: UIViewController {
             }
         }
         DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
-        
     }
     
 }
@@ -152,8 +151,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "ToChartImageFromAdmin", sender: self)
     }
     
-
-
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

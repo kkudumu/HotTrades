@@ -467,6 +467,26 @@
                                         <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8I-e0-rTh">
+                                        <rect key="frame" x="323" y="-12" width="32" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="icons8-cancel-512"/>
+                                        <connections>
+                                            <action selector="exitButtonPressed:" destination="S6a-js-i67" eventType="touchUpInside" id="kE9-rr-gTU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bar-74-rVw">
+                                        <rect key="frame" x="114" y="661" width="115" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.57288194290000005" blue="0.63870163810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="S6a-js-i67" eventType="touchUpInside" id="g63-mS-enz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -632,10 +652,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-QM-jjD">
-                                <rect key="frame" x="259" y="30" width="100" height="30"/>
+                                <rect key="frame" x="253" y="27" width="112" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Subscribe">
+                                <state key="normal" title="Notifications">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -838,10 +858,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfU-eI-eFG">
-                                <rect key="frame" x="259" y="30" width="100" height="30"/>
+                                <rect key="frame" x="253" y="27" width="112" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Subscribe">
+                                <state key="normal" title="Notifications">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -872,9 +892,10 @@
     </scenes>
     <resources>
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
+        <image name="icons8-cancel-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1d7-UU-ijO"/>
-        <segue reference="Lmv-La-1Ep"/>
+        <segue reference="N1I-Lg-Dxl"/>
     </inferredMetricsTieBreakers>
 </document>
