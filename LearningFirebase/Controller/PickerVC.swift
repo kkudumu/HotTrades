@@ -24,6 +24,7 @@ class Currency {
 class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
+    @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var priceTF: UITextField!
@@ -32,6 +33,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     var imagePicker: UIImagePickerController!
     var currencies = [Currency]()
     var onSave: ((_ orderData: String,_ pairData: String, _ priceData: String, _ imageUrl: String) -> ())?
+    var freeUserSave: ((_ orderData: String,_ pairData: String, _ priceData: String, _ imageUrl: String) -> ())?
     
     
     override func viewDidLoad() {
@@ -279,7 +281,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             uploadImageView.image = image
-
+            tapLabel.isHidden = true
         } else {
             print("A valid image wasn't selected")
         }
@@ -318,5 +320,33 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         }
         dismiss(animated: true)
     }
+    
+    @IBAction func freeSignalTapped(_ sender: UIButton) {
+        if pickerView != nil {
+            let imageName = NSUUID().uuidString
+            let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
+            guard let imageUploadCheck = self.uploadImageView.image else {return}
+            
+            
+            
+            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.1 ) {
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    let pathURL = metadata?.downloadURL()?.absoluteString
+                    //                    let pathString = pathURL?.path
+                    self.freeUserSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathURL!)
+                    print(metadata)
+                })
+            }
+        }
+        dismiss(animated: true)
+    }
+    
+    
+    
+    
 
 }

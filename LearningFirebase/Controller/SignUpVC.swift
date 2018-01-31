@@ -52,7 +52,7 @@ class SignUpVC: UIViewController {
             guard let uid = user?.uid else { return }
             let role = "role"
             let userReference = DatabaseService.shared.REF_BASE.child("users").child(uid)
-            let parameters = ["first name": firstName, "last name": lastName, "email": email, "uid": uid, role: "user"]
+            let parameters = ["first name": firstName, "last name": lastName, "email": email, "uid": uid, role: "free_user"]
             
             userReference.updateChildValues(parameters, withCompletionBlock: { (error, ref) in
                 if error != nil {

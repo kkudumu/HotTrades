@@ -13,5 +13,6 @@ target 'LearningFirebase' do
   pod 'SwipeCellKit'
   pod 'Firebase/Storage'
   pod 'Kingfisher'
+  pod 'SwiftyStoreKit'
 
 end

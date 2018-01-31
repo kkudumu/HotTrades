@@ -29,7 +29,7 @@ class ResetPasswordVC: UIViewController {
     
     @IBAction func goBackTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "GoBackToLoginSegue", sender: nil)
+//        self.performSegue(withIdentifier: "GoBackToLoginSegue", sender: nil)
     }
     
 }

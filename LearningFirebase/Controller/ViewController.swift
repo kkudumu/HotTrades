@@ -67,6 +67,7 @@ class ViewController: UIViewController {
         if segue.identifier == "ToPickerVC" {
             let popup = segue.destination as! PickerVC
             popup.onSave = onSave
+            popup.freeUserSave = freeUserSave
         } else if segue.identifier == "ToChartImageFromAdmin" {
         let destViewController: ChartImageController = segue.destination as! ChartImageController
         destViewController.newImage = photoThumbnail
@@ -91,18 +92,54 @@ class ViewController: UIViewController {
         DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
+                    if snapshot.value as! String == "subscribed_user" {
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                    } else if snapshot.value as! String == "admin" {
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                    }
+                    //todo: control free user posts
             }
         }
+    }
         DatabaseService.shared.REF_BASE.child("posts_for_notifications").childByAutoId().setValue(parameters)
         
     }
     var photoThumbnail: UIImage!
+    
+    func freeUserSave(_ orderData: String,_ pairData: String, _ priceData: String, imageURL: String) -> () {
+        
+        let dateString = String(describing: Date())
+        
+        let parameters = ["signal"       :orderData,
+                          "pair"         :pairData,
+                          "price"        :priceData,
+                          "date"         :dateString,
+                          "imageURL"     :imageURL,
+                          "isPending"    :"false"]
+        
+        //generates new ID for each post and set values in our database as parameters
+        //        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
+                    print(snapshot.value as! String, "snapshot.value as string")
+                    if snapshot.value as! String == "free_user" {
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                    }
+                }
+            }
+        }
+        DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
+        
+    }
+    
 }
 
 
 
-//creating table view
+
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -168,6 +205,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         return UISwipeActionsConfiguration(actions: [closeAction])
     }
+    
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let pending = UITableViewRowAction(style: .normal, title: "Pending") { (action, indexPath) in

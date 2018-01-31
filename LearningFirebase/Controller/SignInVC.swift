@@ -29,13 +29,13 @@ class SignInVC: UIViewController {
             if userRole == "admin"{
                 self.performSegue(withIdentifier: "SignInToSignalsSegue", sender: self)
             } else {
-                self.performSegue(withIdentifier: "ToUserVC", sender: self)
+                self.performSegue(withIdentifier: "ToSubChoiceVC", sender: self)
             }
         }
     }
     
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
        self.performSegue(withIdentifier: "ResetPWSegue", sender: nil)
         
         

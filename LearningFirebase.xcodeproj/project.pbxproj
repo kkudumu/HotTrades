@@ -14,10 +14,13 @@
 		330292D820098568003C6420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330292D620098568003C6420 /* LaunchScreen.storyboard */; };
 		330292E020098B14003C6420 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330292DF20098B14003C6420 /* Post.swift */; };
 		330292E220098D4B003C6420 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 330292E120098D4A003C6420 /* GoogleService-Info.plist */; };
+		330960F8202019BF0069F079 /* FreeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330960F7202019BF0069F079 /* FreeUserTableViewCell.swift */; };
 		3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EC201824E7009773DE /* ImageUploadManager.swift */; };
 		3345D8EF20187476009773DE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EE20187476009773DE /* Extensions.swift */; };
-		335D245A201007590090930D /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D2459201007590090930D /* ChartVC.swift */; };
 		335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D245B20102E800090930D /* AdminTableViewCell.swift */; };
+		33682268201C0104000C6342 /* SubChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33682267201C0104000C6342 /* SubChoiceVC.swift */; };
+		3368226A201C0165000C6342 /* SubPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33682269201C0165000C6342 /* SubPayVC.swift */; };
+		3368226C201C09D8000C6342 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3368226B201C09D8000C6342 /* StoreKit.framework */; };
 		336C442A20098F0B00A47A86 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C442920098F0B00A47A86 /* DatabaseService.swift */; };
 		336C442C20099F9E00A47A86 /* PostsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C442B20099F9E00A47A86 /* PostsSnapshot.swift */; };
 		338777332010482B006EF11A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338777322010482B006EF11A /* UserTableViewCell.swift */; };
@@ -29,6 +32,7 @@
 		33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFA8200C5E23004BC19D /* UserVC.swift */; };
 		33C3AFAB200C6261004BC19D /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAA200C6261004BC19D /* UNService.swift */; };
 		33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAD200C7799004BC19D /* MessagingService.swift */; };
+		33D1B077201FAB35009A931F /* FreeUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1B076201FAB35009A931F /* FreeUserVC.swift */; };
 		33D3B55720187E750069F2A2 /* ChartImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D3B55620187E750069F2A2 /* ChartImageController.swift */; };
 		33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8462011D605005E1997 /* WebViewRef.swift */; };
 		FCBFD7A050F7F2A0F1E950A2 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */; };
@@ -45,10 +49,13 @@
 		330292D920098568003C6420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		330292DF20098B14003C6420 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		330292E120098D4A003C6420 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		330960F7202019BF0069F079 /* FreeUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeUserTableViewCell.swift; sourceTree = "<group>"; };
 		3345D8EC201824E7009773DE /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		3345D8EE20187476009773DE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		335D2459201007590090930D /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		335D245B20102E800090930D /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
+		33682267201C0104000C6342 /* SubChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubChoiceVC.swift; sourceTree = "<group>"; };
+		33682269201C0165000C6342 /* SubPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPayVC.swift; sourceTree = "<group>"; };
+		3368226B201C09D8000C6342 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		336C442920098F0B00A47A86 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		336C442B20099F9E00A47A86 /* PostsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSnapshot.swift; sourceTree = "<group>"; };
 		338777322010482B006EF11A /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -61,6 +68,7 @@
 		33C3AFAA200C6261004BC19D /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		33C3AFAC200C65D1004BC19D /* LearningFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearningFirebase.entitlements; sourceTree = "<group>"; };
 		33C3AFAD200C7799004BC19D /* MessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingService.swift; sourceTree = "<group>"; };
+		33D1B076201FAB35009A931F /* FreeUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeUserVC.swift; sourceTree = "<group>"; };
 		33D3B55620187E750069F2A2 /* ChartImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartImageController.swift; sourceTree = "<group>"; };
 		33DEE8462011D605005E1997 /* WebViewRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRef.swift; sourceTree = "<group>"; };
 		99E3916B9FB021FA26B0D187 /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBFD7A050F7F2A0F1E950A2 /* Pods_LearningFirebase.framework in Frameworks */,
+				3368226C201C09D8000C6342 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,13 +131,16 @@
 				33A4DFF22009CD91000A6E30 /* SignUpVC.swift */,
 				33C3AFA8200C5E23004BC19D /* UserVC.swift */,
 				33AA44A7200ED6B500468484 /* ResetPasswordVC.swift */,
-				335D2459201007590090930D /* ChartVC.swift */,
 				335D245B20102E800090930D /* AdminTableViewCell.swift */,
 				338777322010482B006EF11A /* UserTableViewCell.swift */,
 				338777342010603B006EF11A /* PickerVC.swift */,
 				3345D8EC201824E7009773DE /* ImageUploadManager.swift */,
 				3345D8EE20187476009773DE /* Extensions.swift */,
 				33D3B55620187E750069F2A2 /* ChartImageController.swift */,
+				33682267201C0104000C6342 /* SubChoiceVC.swift */,
+				33682269201C0165000C6342 /* SubPayVC.swift */,
+				33D1B076201FAB35009A931F /* FreeUserVC.swift */,
+				330960F7202019BF0069F079 /* FreeUserTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +177,7 @@
 		CB6521003D804108E620CD47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3368226B201C09D8000C6342 /* StoreKit.framework */,
 				B20B519C3F13CF5C300B95CE /* Pods_LearningFirebase.framework */,
 			);
 			name = Frameworks;
@@ -217,6 +230,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -319,16 +335,19 @@
 				338777332010482B006EF11A /* UserTableViewCell.swift in Sources */,
 				33C3AFAB200C6261004BC19D /* UNService.swift in Sources */,
 				33A4DFF92009DC06000A6E30 /* AlertController.swift in Sources */,
-				335D245A201007590090930D /* ChartVC.swift in Sources */,
 				336C442C20099F9E00A47A86 /* PostsSnapshot.swift in Sources */,
 				336C442A20098F0B00A47A86 /* DatabaseService.swift in Sources */,
 				33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */,
 				33C3AFA9200C5E23004BC19D /* UserVC.swift in Sources */,
+				330960F8202019BF0069F079 /* FreeUserTableViewCell.swift in Sources */,
 				33D3B55720187E750069F2A2 /* ChartImageController.swift in Sources */,
 				335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */,
+				3368226A201C0165000C6342 /* SubPayVC.swift in Sources */,
+				33682268201C0104000C6342 /* SubChoiceVC.swift in Sources */,
 				3345D8EF20187476009773DE /* Extensions.swift in Sources */,
 				3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
+				33D1B077201FAB35009A931F /* FreeUserVC.swift in Sources */,
 				33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */,
 				33AA44A8200ED6B500468484 /* ResetPasswordVC.swift in Sources */,
 			);
