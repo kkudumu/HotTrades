@@ -10,6 +10,7 @@ import UIKit
 
 class FreeUserTableViewCell: UITableViewCell {
 
+<<<<<<< HEAD
     
     
     @IBOutlet weak var signalLabel: UILabel!
@@ -46,4 +47,17 @@ class FreeUserTableViewCell: UITableViewCell {
     }
     
     
+=======
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
 }

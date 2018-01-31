@@ -7,6 +7,7 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import StoreKit
 import SwiftyStoreKit
 
@@ -199,6 +200,15 @@ class SubPayVC: UIViewController {
             }
         }
         
+=======
+
+class SubPayVC: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
     }
 
     override func didReceiveMemoryWarning() {
@@ -206,6 +216,7 @@ class SubPayVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+<<<<<<< HEAD
     @IBAction func subscribeButtonPressed(_ sender: UIButton) {
         purchaseSubscription(with: inAppPurchaseId[0][0], sharedSecret: sharedSecret, type: .autoRenewable)
 
@@ -215,5 +226,17 @@ class SubPayVC: UIViewController {
     }
     
     
+=======
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
 
 }

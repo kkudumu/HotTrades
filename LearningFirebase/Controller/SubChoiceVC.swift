@@ -7,16 +7,23 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import Firebase
 import SwiftyStoreKit
 import StoreKit
+=======
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
 
 class SubChoiceVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
 //        IAPService.shared.getProducts()
+=======
+
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +32,7 @@ class SubChoiceVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+<<<<<<< HEAD
     @IBAction func freeUserButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ToFreeUserVC", sender: self)
     }
@@ -114,4 +122,17 @@ class SubChoiceVC: UIViewController {
         self.performSegue(withIdentifier: "ToSubPayVC", sender: self)
     }
     
+=======
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+>>>>>>> 7ea8835642335680388526bedf2994d066fe62f8
 }
