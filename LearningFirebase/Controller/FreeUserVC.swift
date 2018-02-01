@@ -133,7 +133,8 @@ extension FreeUserVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let closeAction = UIContextualAction(style: .normal, title: "Close") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FreeUserTableViewCell", for: indexPath) as! FreeUserTableViewCell
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "FreeUserTableViewCell", for: indexPath) as! FreeUserTableViewCell
+            let cell = tableView.cellForRow(at: indexPath) as! FreeUserTableViewCell
             UIPasteboard.general.string = cell.priceLabel.text
             
             success(true)
@@ -160,6 +161,7 @@ extension FreeUserVC: UITableViewDataSource, UITableViewDelegate {
             })
             tableView.reloadData()
         }
+        
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
@@ -171,9 +173,10 @@ extension FreeUserVC: UITableViewDataSource, UITableViewDelegate {
                 DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").observe(.childRemoved, with: { (snapshot) in
                     if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
                         self.posts.remove(at: index)
-                        //                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadData"), object: self)
+                        // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadData"), object: self)
                         self.tableView.reloadData()
                     } else {
+                        self.tableView.reloadData()
                         print("item not found")
                     }
                 })
