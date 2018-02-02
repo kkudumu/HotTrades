@@ -15,7 +15,6 @@
 		330292E020098B14003C6420 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330292DF20098B14003C6420 /* Post.swift */; };
 		330292E220098D4B003C6420 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 330292E120098D4A003C6420 /* GoogleService-Info.plist */; };
 		330960F8202019BF0069F079 /* FreeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330960F7202019BF0069F079 /* FreeUserTableViewCell.swift */; };
-		3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EC201824E7009773DE /* ImageUploadManager.swift */; };
 		3345D8EF20187476009773DE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3345D8EE20187476009773DE /* Extensions.swift */; };
 		335D245C20102E800090930D /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D245B20102E800090930D /* AdminTableViewCell.swift */; };
 		33682268201C0104000C6342 /* SubChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33682267201C0104000C6342 /* SubChoiceVC.swift */; };
@@ -50,7 +49,6 @@
 		330292DF20098B14003C6420 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		330292E120098D4A003C6420 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		330960F7202019BF0069F079 /* FreeUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeUserTableViewCell.swift; sourceTree = "<group>"; };
-		3345D8EC201824E7009773DE /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		3345D8EE20187476009773DE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		335D245B20102E800090930D /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
 		33682267201C0104000C6342 /* SubChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubChoiceVC.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				335D245B20102E800090930D /* AdminTableViewCell.swift */,
 				338777322010482B006EF11A /* UserTableViewCell.swift */,
 				338777342010603B006EF11A /* PickerVC.swift */,
-				3345D8EC201824E7009773DE /* ImageUploadManager.swift */,
 				3345D8EE20187476009773DE /* Extensions.swift */,
 				33D3B55620187E750069F2A2 /* ChartImageController.swift */,
 				33682267201C0104000C6342 /* SubChoiceVC.swift */,
@@ -345,7 +342,6 @@
 				3368226A201C0165000C6342 /* SubPayVC.swift in Sources */,
 				33682268201C0104000C6342 /* SubChoiceVC.swift in Sources */,
 				3345D8EF20187476009773DE /* Extensions.swift in Sources */,
-				3345D8ED201824E7009773DE /* ImageUploadManager.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
 				33D1B077201FAB35009A931F /* FreeUserVC.swift in Sources */,
 				33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */,
