@@ -17,5 +17,4 @@ public enum Size: Int {
     //added by me
     case screen10_5Inch
     case screen12_9Inch
-    case screen12_9InchL
 }
