@@ -14,5 +14,6 @@ target 'LearningFirebase' do
   pod 'Firebase/Storage'
   pod 'Kingfisher'
   pod 'SwiftyStoreKit'
+  pod 'DeviceLayout'
 
 end

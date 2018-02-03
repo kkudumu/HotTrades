@@ -10,6 +10,8 @@
 import UIKit
 
 class AlertController {
+    
+    var button: UIButton?
 
     static func showAlert(_ inViewController: UIViewController, title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -30,6 +32,7 @@ class AlertController {
         }
         alert.addAction(subscribe)
         alert.addAction(unsubscribe)
+   
         vc.present(alert, animated: true)
     }
     //free user notifications
@@ -45,6 +48,16 @@ class AlertController {
         }
         alert.addAction(subscribe)
         alert.addAction(unsubscribe)
+//        alert.popoverPresentationController?.sourceView = self.view
         vc.present(alert, animated: true)
     }
+    
+   
 }
+
+extension UIAlertController {
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+            return .all
+        }
+    }
+

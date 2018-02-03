@@ -54,9 +54,49 @@ class FreeUserVC: UIViewController {
     }
     
     @IBAction func onSubscribeTapped() {
-        AlertController.subscribeFreeAlert(in: self)
+//        AlertController.subscribeFreeAlert(in: self)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let subscribe = UIAlertAction(title: "On", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .freePosts)
+            MessagingService.shared.unsubscribe(from: .newPosts)
+        }
+        let unsubscribe = UIAlertAction(title: "Off", style: .destructive) { (_) in
+            MessagingService.shared.unsubscribe(from: .freePosts)
+            MessagingService.shared.unsubscribe(from: .newPosts)
+        }
+        alert.addAction(subscribe)
+        alert.addAction(unsubscribe)
+        alert.popoverPresentationController?.sourceView = self.view
+        
+        present(alert, animated: true)
+        
     }
     var photoThumbnail: UIImage!
+    
+    override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.RawValue(UIInterfaceOrientation.portrait.rawValue))
+        }
+        else {
+            return UIInterfaceOrientationMask.all
+        }
+    }
+    
+    override public var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return UIInterfaceOrientation.unknown
+    }
+    
+    override public var shouldAutorotate: Bool {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+   
+    
+    
 }
 
 
@@ -121,9 +161,6 @@ extension FreeUserVC: UITableViewDataSource, UITableViewDelegate {
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
-        
-        //TODO
-        
         
         
         return cell

@@ -19,6 +19,7 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -42,6 +43,7 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
             
         }
     }
+ 
     
     
     @IBAction func onUserLogOutTapped(_ sender: Any) {
@@ -57,6 +59,32 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
         AlertController.subscribeAlert(in: self)
     }
      var photoThumbnail: UIImage!
+    
+    override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.RawValue(UIInterfaceOrientation.portrait.rawValue))
+        }
+        else {
+            return UIInterfaceOrientationMask.all
+        }
+    }
+    
+    override public var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return UIInterfaceOrientation.unknown
+    }
+    
+    override public var shouldAutorotate: Bool {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+
+    
+
 }
 
 
@@ -122,8 +150,9 @@ extension UserVC: UITableViewDataSource, UITableViewDelegate {
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
         
-        //TODO
-        
+        //testing constraints
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 140
  
         
         return cell

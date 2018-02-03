@@ -27,6 +27,7 @@ class SubChoiceVC: UIViewController {
     
     @IBAction func freeUserButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ToFreeUserVC", sender: self)
+        UIDeviceOrientation.portrait
     }
 
     @IBAction func logOutButtonPressed(_ sender: Any) {
@@ -42,7 +43,10 @@ class SubChoiceVC: UIViewController {
     
     
     
+    
+    
     @IBAction func subscribedUserButtonPressed(_ sender: UIButton) {
+        
         //TODO Check if user has subscribed via swiftystorekit, then if subscribed, change user role to "subscribed_user", take user to vc with "ToUserVC" segue
         let uid = Auth.auth().currentUser?.uid
         DatabaseService.shared.REF_BASE.child("users").child(uid!).child("role").observeSingleEvent(of: .value) { (snapshot) in
@@ -66,10 +70,13 @@ class SubChoiceVC: UIViewController {
                         print("*********** SHOULD GO TO USER VC ***********")
                         if snapshot.value as! String == "free_user" {
                             DatabaseService.shared.REF_BASE.child("users").child(uid!).updateChildValues(["role":"subscribed_user"])
+                            self.performSegue(withIdentifier: "ToUserVC", sender: self)
                             
                         } else if snapshot.value as! String == "subscribed_user" {
                             self.performSegue(withIdentifier: "ToUserVC", sender: self)
+                            
                         }
+                        
                         print("\(productId) is valid until \(expiryDate)\n\(items)\n")
                         print("*********** USER SHOULD HAVE GONE TO USER VC *************")
                         

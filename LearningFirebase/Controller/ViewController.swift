@@ -134,6 +134,28 @@ class ViewController: UIViewController {
         DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
     }
     
+    override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.RawValue(UIInterfaceOrientation.portrait.rawValue))
+        }
+        else {
+            return UIInterfaceOrientationMask.all
+        }
+    }
+    
+    override public var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return UIInterfaceOrientation.unknown
+    }
+    
+    override public var shouldAutorotate: Bool {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
 }
 
 
