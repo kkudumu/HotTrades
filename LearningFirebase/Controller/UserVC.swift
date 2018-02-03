@@ -56,7 +56,20 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func onSubscribeTapped() {
-        AlertController.subscribeAlert(in: self)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let subscribe = UIAlertAction(title: "On", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .newPosts)
+            MessagingService.shared.unsubscribe(from: .freePosts)
+        }
+        let unsubscribe = UIAlertAction(title: "Off", style: .destructive) { (_) in
+            MessagingService.shared.unsubscribe(from: .newPosts)
+            MessagingService.shared.unsubscribe(from: .freePosts)
+        }
+        alert.addAction(subscribe)
+        alert.addAction(unsubscribe)
+        alert.popoverPresentationController?.sourceView = self.view
+        present(alert, animated: true)
+        
     }
      var photoThumbnail: UIImage!
     

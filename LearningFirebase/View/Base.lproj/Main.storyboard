@@ -450,44 +450,62 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SELL STOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-9X-Aoj">
-                                                    <rect key="frame" x="50" y="12" width="117" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Q6e-SR-uMx"/>
-                                                        <constraint firstAttribute="width" constant="117" id="WqZ-lI-RIj"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL STOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-9X-Aoj">
+                                                    <rect key="frame" x="64" y="12" width="86.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="123.456" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-6t-lNX">
-                                                    <rect key="frame" x="243" y="12" width="89" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="89" id="FRI-MB-Fcg"/>
-                                                        <constraint firstAttribute="height" constant="21" id="taF-SC-TD6"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.456" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-6t-lNX">
+                                                    <rect key="frame" x="288.33333333333331" y="12" width="62.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EUR/USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-R7-192">
-                                                    <rect key="frame" x="153" y="12" width="103" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="103" id="0be-Gy-3vY"/>
-                                                        <constraint firstAttribute="height" constant="21" id="J4i-oB-Fap"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR/USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-R7-192">
+                                                    <rect key="frame" x="183" y="13.666666666666664" width="72.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ydW-6t-lNX" firstAttribute="leading" secondItem="sLz-R7-192" secondAttribute="trailing" constant="-13" id="2pL-jq-BAD"/>
-                                                <constraint firstItem="Cjc-9X-Aoj" firstAttribute="baseline" secondItem="sLz-R7-192" secondAttribute="baseline" id="Ei6-OH-C9R"/>
-                                                <constraint firstItem="sLz-R7-192" firstAttribute="baseline" secondItem="ydW-6t-lNX" secondAttribute="baseline" id="V0T-ke-iRg"/>
-                                                <constraint firstItem="Cjc-9X-Aoj" firstAttribute="leading" secondItem="RgA-av-wRi" secondAttribute="leadingMargin" constant="34" id="oeg-dl-TUK"/>
-                                                <constraint firstItem="Cjc-9X-Aoj" firstAttribute="centerY" secondItem="RgA-av-wRi" secondAttribute="centerY" id="q1u-Oc-FVH"/>
-                                                <constraint firstItem="sLz-R7-192" firstAttribute="leading" secondItem="Cjc-9X-Aoj" secondAttribute="trailing" constant="-14" id="wWL-1j-4Ae"/>
+                                                <constraint firstItem="sLz-R7-192" firstAttribute="top" secondItem="RgA-av-wRi" secondAttribute="top" constant="13.67" id="6M7-0F-OgS"/>
+                                                <constraint firstAttribute="trailing" secondItem="ydW-6t-lNX" secondAttribute="trailing" constant="24" id="B49-Wf-ri4" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstItem="Cjc-9X-Aoj" firstAttribute="leading" secondItem="RgA-av-wRi" secondAttribute="leading" constant="64" id="ckx-cI-v2U" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                            <real key="value" value="55"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="Cjc-9X-Aoj" secondAttribute="bottom" constant="10" id="ivO-93-f2u"/>
+                                                <constraint firstAttribute="bottom" secondItem="ydW-6t-lNX" secondAttribute="bottom" constant="10" id="qBk-bg-8wL"/>
+                                                <constraint firstItem="sLz-R7-192" firstAttribute="leading" secondItem="RgA-av-wRi" secondAttribute="leading" constant="183" id="wjq-bs-jT0" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                            <real key="value" value="160"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch5_5">
+                                                            <real key="value" value="200"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch9_7">
+                                                            <real key="value" value="375"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch10_5">
+                                                            <real key="value" value="400"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch12_9">
+                                                            <real key="value" value="500"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </constraint>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -920,6 +938,18 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="inch4">
                                                             <real key="value" value="160"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch5_5">
+                                                            <real key="value" value="200"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch9_7">
+                                                            <real key="value" value="375"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch10_5">
+                                                            <real key="value" value="400"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch12_9">
+                                                            <real key="value" value="500"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </constraint>
                                             </constraints>
@@ -1211,10 +1241,16 @@
                                                             <real key="value" value="200"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="inch9_7">
-                                                            <real key="value" value="350"/>
+                                                            <real key="value" value="375"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="inch12_9">
                                                             <real key="value" value="500"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch10_5">
+                                                            <real key="value" value="400"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="inch12_9L">
+                                                            <real key="value" value="600"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </constraint>
@@ -1310,7 +1346,7 @@
         <image name="icons8-cancel-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1d7-UU-ijO"/>
-        <segue reference="N1I-Lg-Dxl"/>
+        <segue reference="kOl-2z-yar"/>
+        <segue reference="b6D-6c-wam"/>
     </inferredMetricsTieBreakers>
 </document>

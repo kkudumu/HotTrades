@@ -33,6 +33,7 @@ class AlertController {
         alert.addAction(subscribe)
         alert.addAction(unsubscribe)
    
+   
         vc.present(alert, animated: true)
     }
     //free user notifications

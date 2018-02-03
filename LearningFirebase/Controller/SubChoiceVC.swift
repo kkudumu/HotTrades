@@ -27,7 +27,6 @@ class SubChoiceVC: UIViewController {
     
     @IBAction func freeUserButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "ToFreeUserVC", sender: self)
-        UIDeviceOrientation.portrait
     }
 
     @IBAction func logOutButtonPressed(_ sender: Any) {

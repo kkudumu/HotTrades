@@ -45,7 +45,8 @@ open class Device {
             case "iPad4,4", "iPad4,5", "iPad4,6":            return Version.iPadMini2
             case "iPad4,7", "iPad4,8", "iPad4,9":            return Version.iPadMini3
             case "iPad5,1", "iPad5,2":                       return Version.iPadMini4
-            case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return Version.iPadPro
+            //added ipad 7,3 and 7,4
+            case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8", "iPad7,3", "iPad7,4": return Version.iPadPro
             
             /*** iPod ***/
             case "iPod1,1":                                  return Version.iPodTouch1Gen
@@ -89,7 +90,8 @@ open class Device {
         let w: Double = Double(UIScreen.main.bounds.width)
         let h: Double = Double(UIScreen.main.bounds.height)
         let screenHeight: Double = max(w, h)
-        
+
+
         switch screenHeight {
             case 480:
                 return Size.screen3_5Inch
@@ -105,14 +107,21 @@ open class Device {
                         return Size.screen7_9Inch
                     default:
                         return Size.screen9_7Inch
+                    
                 }
-            case 1366:
-                return Size.screen12_9Inch
-            default:
-                return Size.unknownSize
+
+            //added by me
+        case 1112:
+            return Size.screen10_5Inch
+        case 1366:
+            return Size.screen12_9Inch
+        default:
+            return Size.unknownSize
         }
+        
+        
     }
-    
+
     static open func type() -> Type {
         let versionName = Device.getVersionCode()
         
