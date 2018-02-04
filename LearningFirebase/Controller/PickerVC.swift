@@ -284,6 +284,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
             uploadImageView.image = image
             tapLabel.isHidden = true
         } else {
@@ -305,8 +306,10 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         if pickerView != nil {
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
+            if uploadImageView.image == nil {
+            uploadImageView.image = UIImage(named: "Screen Shot 2018-01-15 at 3.22.00 PM")
+            }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
-            
             
             
             if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.1 ) {

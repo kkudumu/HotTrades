@@ -43,3 +43,4 @@ class DeviceLayoutConstraint: NSLayoutConstraint {
 fileprivate extension Device {
     static let deviceSize = Device.size()
 }
+

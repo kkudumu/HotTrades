@@ -194,13 +194,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
         })
         
-
+        
+        
         if let postImageURL = post.imageURL {
             let url = URL(string: postImageURL)
             cell.postImageView.kf.setImage(with: url)
 //            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
-
         }
+        
+
         
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair

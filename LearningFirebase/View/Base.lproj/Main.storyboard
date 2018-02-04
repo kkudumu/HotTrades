@@ -1413,51 +1413,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-m9-I7u">
-                                <rect key="frame" x="0.0" y="69" width="375" height="743"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="1dh-rZ-hGV" appends="YES" id="4q6-md-ibK"/>
-                                    <outletCollection property="gestureRecognizers" destination="aaR-Eq-Sxf" appends="YES" id="9UY-7I-vih"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-Mp-ZlP">
-                                <rect key="frame" x="16" y="31" width="46" height="30"/>
+                                <rect key="frame" x="16" y="31" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="m1k-9h-Wcr" eventType="touchUpInside" id="gpO-72-Z5r"/>
                                 </connections>
                             </button>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-m9-I7u">
+                                <rect key="frame" x="0.0" y="69" width="375" height="743"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aaR-Eq-Sxf" appends="YES" id="9UY-7I-vih"/>
+                                    <outletCollection property="gestureRecognizers" destination="1dh-rZ-hGV" appends="YES" id="4q6-md-ibK"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ROr-ah-LNm" firstAttribute="trailing" secondItem="cXx-Mp-ZlP" secondAttribute="trailing" constant="313" id="5ZY-tm-kpp"/>
-                            <constraint firstItem="cXx-Mp-ZlP" firstAttribute="leading" secondItem="Ux9-GD-xt3" secondAttribute="leadingMargin" id="AOo-3z-7AR"/>
-                            <constraint firstAttribute="bottom" secondItem="bQs-m9-I7u" secondAttribute="bottom" id="LD7-cM-Rwr"/>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" symbolic="YES" id="RYg-HS-FB0"/>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="leading" secondItem="Ux9-GD-xt3" secondAttribute="leading" id="X2q-AZ-bks"/>
-                            <constraint firstItem="cXx-Mp-ZlP" firstAttribute="top" secondItem="Ux9-GD-xt3" secondAttribute="topMargin" constant="-13" id="c2r-vw-Lfb"/>
-                            <constraint firstAttribute="trailing" secondItem="bQs-m9-I7u" secondAttribute="trailing" id="zaU-Ac-isL"/>
+                            <constraint firstItem="bQs-m9-I7u" firstAttribute="leading" secondItem="ROr-ah-LNm" secondAttribute="leading" id="6ys-5v-3Jk"/>
+                            <constraint firstItem="bQs-m9-I7u" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" id="HYN-DM-u6x"/>
+                            <constraint firstItem="cXx-Mp-ZlP" firstAttribute="top" secondItem="Ux9-GD-xt3" secondAttribute="top" constant="31" id="ZaB-eb-fyi"/>
+                            <constraint firstItem="cXx-Mp-ZlP" firstAttribute="leading" secondItem="ROr-ah-LNm" secondAttribute="leading" constant="16" id="mjC-Ct-GFR"/>
+                            <constraint firstAttribute="bottom" secondItem="bQs-m9-I7u" secondAttribute="bottom" id="n4g-44-eJA"/>
+                            <constraint firstItem="bQs-m9-I7u" firstAttribute="trailing" secondItem="ROr-ah-LNm" secondAttribute="trailing" id="uPQ-H0-3A6"/>
+                            <constraint firstItem="bQs-m9-I7u" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" id="zNt-dx-1WB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ROr-ah-LNm"/>
                     </view>
                     <connections>
-                        <outlet property="chartImageView" destination="bQs-m9-I7u" id="6MP-Az-17F"/>
+                        <outlet property="chartImageView" destination="bQs-m9-I7u" id="Aga-Fa-H5K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPf-8i-DH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer cancelsTouchesInView="NO" id="1dh-rZ-hGV">
                     <connections>
-                        <action selector="scaleImage:" destination="m1k-9h-Wcr" id="vkN-KC-iJ3"/>
+                        <action selector="scaleImage:" destination="m1k-9h-Wcr" id="SGc-Yd-oc2"/>
                     </connections>
                 </pinchGestureRecognizer>
                 <panGestureRecognizer cancelsTouchesInView="NO" maximumNumberOfTouches="1" id="aaR-Eq-Sxf">
                     <connections>
-                        <action selector="moveImage:" destination="m1k-9h-Wcr" id="ebb-47-iUb"/>
+                        <action selector="moveImage:" destination="m1k-9h-Wcr" id="5Yq-JV-nti"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2170" y="-301"/>
+            <point key="canvasLocation" x="2168.8000000000002" y="-301.47783251231527"/>
         </scene>
         <!--Free UserVC-->
         <scene sceneID="88Y-RA-V5B">
@@ -1612,7 +1612,7 @@
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1d7-UU-ijO"/>
-        <segue reference="N1I-Lg-Dxl"/>
+        <segue reference="VLg-fo-agg"/>
+        <segue reference="wLp-lz-33z"/>
     </inferredMetricsTieBreakers>
 </document>
