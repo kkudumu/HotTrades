@@ -15,20 +15,8 @@ target 'LearningFirebase' do
   pod 'Kingfisher'
   pod 'SwiftyStoreKit'
   pod 'DeviceLayout'
-
   pod 'AppImageViewer'
   
   
 
 end
-
-  pod 'ImageScrollView'
-  pod 'ScrollViewController'
-  pod 'PartialScrollView'
-  pod 'ZoomImageView'
-  pod 'SKPhotoBrowser'
-  pod 'InstaZoom'
-  pod 'AEImage'
-  pod 'SimpleImageViewer'
-  pod 'GTZoomableImageView'
-  pod 'FTImageViewer'

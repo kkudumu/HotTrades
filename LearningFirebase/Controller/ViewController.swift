@@ -98,7 +98,6 @@ class ViewController: UIViewController {
                     } else if snapshot.value as! String == "admin" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
                     }
-                  
             }
         }
     }

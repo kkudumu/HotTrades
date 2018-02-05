@@ -10,51 +10,55 @@ import UIKit
 import Firebase
 import InstaZoom
 
-class ChartImageController: UIViewController {
+class ChartImageController: UIViewController, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var chartImageView: UIImageView!
+    var chartImageView: UIImageView!
     var newImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chartImageView.image = newImage
-        chartImageView.contentMode = UIViewContentMode.scaleAspectFit
-        chartImageView.clipsToBounds = true
-      
-       
-        
 
-        
-
-
-        
-        //        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveImage(_:)))
-        //        self.chartImageView.addGestureRecognizer(gestureRecognizer)
-        // Do any additional setup after loading the view.
+        scrollView.delegate = self
+        ImageViewInit()
+   
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        chartImageView.image = newImage
-//    }
     
-    @IBAction func scaleImage(_ sender: UIPinchGestureRecognizer) {
-
-        chartImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
-
-
+    func ImageViewInit() {
+        chartImageView = UIImageView()
+        chartImageView.frame = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+        chartImageView.image = newImage
+        chartImageView.contentMode = .scaleAspectFit
+        chartImageView.backgroundColor = UIColor.black
+        scrollView.backgroundColor = UIColor.black
+        scrollView.maximumZoomScale = 4
+        scrollView.minimumZoomScale = 0.02
+        scrollView.bounces = true
+        scrollView.bouncesZoom = true
+        scrollView.contentMode = .scaleAspectFit
+        scrollView.contentSize = newImage.size
+        scrollView.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        scrollView.addSubview(chartImageView)
+        setZoomScale()
     }
-
-    @IBAction func moveImage(_ sender: UIPanGestureRecognizer) {
-
-        let translation = sender.translation(in: self.view)
-//
-        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
-
-        sender.setTranslation(.zero, in: self.view)
-        
-
-
+    
+    var minZoomScale:CGFloat!
+    
+    func setZoomScale(){
+        let imageViewSize = chartImageView.bounds.size
+        let scrollViewSize = scrollView.bounds.size
+        let widthScale = scrollViewSize.width / imageViewSize.width
+        let heightScale = scrollViewSize.height / imageViewSize.height
+        minZoomScale = max(widthScale, heightScale)
+        scrollView.minimumZoomScale = minZoomScale
+        scrollView.zoomScale = minZoomScale
     }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return chartImageView
+    }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,6 +70,7 @@ class ChartImageController: UIViewController {
     }
     
 }
+
 
 
 

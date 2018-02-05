@@ -443,7 +443,7 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="684"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminTableViewCell" id="ZFz-dV-fRu" customClass="AdminTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminTableViewCell" id="ZFz-dV-fRu" customClass="AdminTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFz-dV-fRu" id="RgA-av-wRi">
@@ -451,19 +451,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL STOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-9X-Aoj">
-                                                    <rect key="frame" x="64" y="12" width="86.666666666666686" height="21"/>
+                                                    <rect key="frame" x="64" y="12" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.456" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-6t-lNX">
-                                                    <rect key="frame" x="288.33333333333331" y="12" width="62.666666666666686" height="21"/>
+                                                    <rect key="frame" x="288.66666666666669" y="12" width="62.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR/USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-R7-192">
-                                                    <rect key="frame" x="183" y="13.666666666666664" width="72.666666666666686" height="21"/>
+                                                    <rect key="frame" x="183" y="13.666666666666664" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1057,7 +1057,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCw-8b-bmV" userLabel="LogoContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="290"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="18301976_170760036784928_8172286116276670772_n" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-mJ-gfK">
                                         <rect key="frame" x="147.66666666666666" y="105" width="80" height="80"/>
@@ -1090,7 +1090,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OP-9u-9bj" userLabel="ButtonContainer">
-                                <rect key="frame" x="0.0" y="522" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="522" width="374.66666666666669" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-9O-VKI">
                                         <rect key="frame" x="108.66666666666669" y="119" width="158" height="52"/>
@@ -1154,7 +1154,7 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="pis-6G-Kj5" customClass="UserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="pis-6G-Kj5" customClass="UserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pis-6G-Kj5" id="LcC-iT-X5h">
@@ -1168,13 +1168,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.456" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-Eu-Fje">
-                                                    <rect key="frame" x="288.33333333333331" y="13.666666666666666" width="62.666666666666686" height="20.333333333333336"/>
+                                                    <rect key="frame" x="288.66666666666669" y="13.666666666666666" width="62.333333333333314" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR/USD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-FL-wA7">
-                                                    <rect key="frame" x="183" y="13.666666666666666" width="72.666666666666686" height="20.333333333333336"/>
+                                                    <rect key="frame" x="183" y="13.666666666666666" width="73" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1420,42 +1420,26 @@
                                     <action selector="backButtonPressed:" destination="m1k-9h-Wcr" eventType="touchUpInside" id="gpO-72-Z5r"/>
                                 </connections>
                             </button>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-m9-I7u">
-                                <rect key="frame" x="0.0" y="69" width="375" height="743"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="aaR-Eq-Sxf" appends="YES" id="9UY-7I-vih"/>
-                                    <outletCollection property="gestureRecognizers" destination="1dh-rZ-hGV" appends="YES" id="4q6-md-ibK"/>
-                                </connections>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-mc-4O0">
+                                <rect key="frame" x="0.0" y="69" width="375" height="709"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="leading" secondItem="ROr-ah-LNm" secondAttribute="leading" id="6ys-5v-3Jk"/>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" id="HYN-DM-u6x"/>
+                            <constraint firstItem="Jii-mc-4O0" firstAttribute="trailing" secondItem="ROr-ah-LNm" secondAttribute="trailing" id="8jN-Wl-8An"/>
+                            <constraint firstItem="Jii-mc-4O0" firstAttribute="bottom" secondItem="ROr-ah-LNm" secondAttribute="bottom" id="Enb-Wg-XCp"/>
+                            <constraint firstItem="Jii-mc-4O0" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" id="KHz-xc-mfV"/>
                             <constraint firstItem="cXx-Mp-ZlP" firstAttribute="top" secondItem="Ux9-GD-xt3" secondAttribute="top" constant="31" id="ZaB-eb-fyi"/>
+                            <constraint firstItem="Jii-mc-4O0" firstAttribute="leading" secondItem="ROr-ah-LNm" secondAttribute="leading" id="kB0-Ra-PpD"/>
                             <constraint firstItem="cXx-Mp-ZlP" firstAttribute="leading" secondItem="ROr-ah-LNm" secondAttribute="leading" constant="16" id="mjC-Ct-GFR"/>
-                            <constraint firstAttribute="bottom" secondItem="bQs-m9-I7u" secondAttribute="bottom" id="n4g-44-eJA"/>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="trailing" secondItem="ROr-ah-LNm" secondAttribute="trailing" id="uPQ-H0-3A6"/>
-                            <constraint firstItem="bQs-m9-I7u" firstAttribute="top" secondItem="cXx-Mp-ZlP" secondAttribute="bottom" constant="8" id="zNt-dx-1WB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ROr-ah-LNm"/>
                     </view>
                     <connections>
-                        <outlet property="chartImageView" destination="bQs-m9-I7u" id="Aga-Fa-H5K"/>
+                        <outlet property="scrollView" destination="Jii-mc-4O0" id="ByE-mb-Vpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPf-8i-DH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer cancelsTouchesInView="NO" id="1dh-rZ-hGV">
-                    <connections>
-                        <action selector="scaleImage:" destination="m1k-9h-Wcr" id="SGc-Yd-oc2"/>
-                    </connections>
-                </pinchGestureRecognizer>
-                <panGestureRecognizer cancelsTouchesInView="NO" maximumNumberOfTouches="1" id="aaR-Eq-Sxf">
-                    <connections>
-                        <action selector="moveImage:" destination="m1k-9h-Wcr" id="5Yq-JV-nti"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2168.8000000000002" y="-301.47783251231527"/>
         </scene>
@@ -1471,7 +1455,7 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FreeUserTableViewCell" id="lw8-gP-iE6" customClass="FreeUserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FreeUserTableViewCell" id="lw8-gP-iE6" customClass="FreeUserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lw8-gP-iE6" id="oJQ-ZP-o20">
@@ -1479,19 +1463,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123.456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXn-vC-mug">
-                                                    <rect key="frame" x="288.33333333333331" y="13.333333333333334" width="62.666666666666686" height="20.333333333333329"/>
+                                                    <rect key="frame" x="288.66666666666669" y="13.666666666666664" width="62.333333333333314" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR/USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-c7-lzW">
-                                                    <rect key="frame" x="183" y="13.666666666666666" width="72.666666666666686" height="20.333333333333336"/>
+                                                    <rect key="frame" x="183" y="13.666666666666666" width="73" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL STOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-SZ-wPt">
-                                                    <rect key="frame" x="64" y="12.666666666666664" width="86.666666666666686" height="21"/>
+                                                    <rect key="frame" x="64" y="12.666666666666664" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
