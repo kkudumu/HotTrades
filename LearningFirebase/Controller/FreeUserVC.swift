@@ -14,10 +14,12 @@ class FreeUserVC: UIViewController {
     var posts = [Post]()
     var onCellTap: ((_ data: String) -> ())?
     @IBOutlet weak var tableView: UITableView!
-    
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

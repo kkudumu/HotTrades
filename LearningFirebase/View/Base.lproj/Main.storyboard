@@ -443,7 +443,7 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="684"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminTableViewCell" id="ZFz-dV-fRu" customClass="AdminTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdminTableViewCell" id="ZFz-dV-fRu" customClass="AdminTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFz-dV-fRu" id="RgA-av-wRi">
@@ -543,8 +543,23 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onAddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qd-xX-Mic"/>
+                                    <action selector="onAddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wM-Rq-QEg"/>
                                     <segue destination="S6a-js-i67" kind="presentation" identifier="ToPickerVC" id="X6U-zb-0Cd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHV-1y-8kD">
+                                <rect key="frame" x="119" y="31" width="112" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="lPZ-4x-7nb"/>
+                                    <constraint firstAttribute="height" constant="36" id="sHp-Q5-Cz4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Notifications">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="notificationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OPx-Zy-cqP"/>
+                                    <action selector="onSubscribeTapped" destination="tXb-gF-bXv" eventType="touchUpInside" id="HR8-pQ-CYc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -552,10 +567,13 @@
                         <constraints>
                             <constraint firstItem="dN3-Xs-j6j" firstAttribute="top" secondItem="8JA-3c-BJy" secondAttribute="bottom" constant="8" id="5CX-As-vqd"/>
                             <constraint firstItem="dN3-Xs-j6j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Fw-QY-JCJ"/>
+                            <constraint firstItem="XHV-1y-8kD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="31" id="AFF-xq-1lv"/>
                             <constraint firstAttribute="bottom" secondItem="dN3-Xs-j6j" secondAttribute="bottom" id="CLW-gb-zkd"/>
                             <constraint firstItem="8JA-3c-BJy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FBp-E4-fwM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zdp-mf-HaK" secondAttribute="trailing" constant="16" id="HaM-6n-IOz"/>
                             <constraint firstItem="Yw0-Hx-Zjk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VYg-gi-8a3"/>
+                            <constraint firstItem="XHV-1y-8kD" firstAttribute="leading" secondItem="Yw0-Hx-Zjk" secondAttribute="trailing" constant="30" id="X7k-tf-pAa"/>
+                            <constraint firstItem="Zdp-mf-HaK" firstAttribute="leading" secondItem="XHV-1y-8kD" secondAttribute="trailing" constant="30" id="bCS-Cn-e2i"/>
                             <constraint firstItem="Zdp-mf-HaK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="31" id="cRY-Kx-VoV"/>
                             <constraint firstItem="Yw0-Hx-Zjk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="31" id="gzU-ou-7Lt"/>
                             <constraint firstItem="8JA-3c-BJy" firstAttribute="top" secondItem="Yw0-Hx-Zjk" secondAttribute="bottom" constant="11" id="tOC-gV-q8C"/>
@@ -1154,7 +1172,7 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="pis-6G-Kj5" customClass="UserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="pis-6G-Kj5" customClass="UserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pis-6G-Kj5" id="LcC-iT-X5h">
@@ -1372,12 +1390,50 @@
                                             <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="v65-1q-e7J"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-Pp-gsi">
+                                        <rect key="frame" x="44" y="239" width="287" height="103"/>
+                                        <string key="text">Please enter your email below to reset your password. You will be sent an email with instructions to reset the password for your account.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="k7l-Pp-gsi" secondAttribute="bottom" id="8Oe-ma-jP1" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                <real key="value" value="-16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inch4_7">
+                                                <real key="value" value="-16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                     <constraint firstItem="hB0-JT-gqY" firstAttribute="top" secondItem="7oa-Ef-L5T" secondAttribute="top" constant="31" id="9S4-D3-HW8"/>
+                                    <constraint firstItem="k7l-Pp-gsi" firstAttribute="top" secondItem="QD1-es-zEi" secondAttribute="bottom" constant="22" id="JVu-SQ-ZpL" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                     <constraint firstItem="hB0-JT-gqY" firstAttribute="leading" secondItem="7oa-Ef-L5T" secondAttribute="leading" constant="8" id="O7T-qk-SxD"/>
+                                    <constraint firstItem="k7l-Pp-gsi" firstAttribute="leading" secondItem="7oa-Ef-L5T" secondAttribute="leading" constant="44" id="Shm-zA-c9k" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                     <constraint firstItem="QD1-es-zEi" firstAttribute="centerX" secondItem="7oa-Ef-L5T" secondAttribute="centerX" id="guA-tQ-Ew7"/>
                                     <constraint firstItem="QD1-es-zEi" firstAttribute="centerY" secondItem="7oa-Ef-L5T" secondAttribute="centerY" id="iss-aF-OEG"/>
+                                    <constraint firstAttribute="trailing" secondItem="k7l-Pp-gsi" secondAttribute="trailing" constant="44" id="xK7-CD-999" customClass="DeviceLayoutConstraint" customModule="DeviceLayout">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inch4">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1455,7 +1511,7 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FreeUserTableViewCell" id="lw8-gP-iE6" customClass="FreeUserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FreeUserTableViewCell" id="lw8-gP-iE6" customClass="FreeUserTableViewCell" customModule="LearningFirebase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lw8-gP-iE6" id="oJQ-ZP-o20">
@@ -1596,7 +1652,7 @@
         <image name="18301976_170760036784928_8172286116276670772_n" width="154" height="154"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VLg-fo-agg"/>
-        <segue reference="wLp-lz-33z"/>
+        <segue reference="1d7-UU-ijO"/>
+        <segue reference="N1I-Lg-Dxl"/>
     </inferredMetricsTieBreakers>
 </document>

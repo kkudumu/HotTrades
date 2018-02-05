@@ -25,9 +25,6 @@ class ViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-//        guard let firstLast = Auth.auth().currentUser?.displayName else { return }
-        
-//        label.text = "Hello \(firstLast)" - added in case we want to welcome users in the future. May need to change it to just first name in the displayName though.
         
         //observe data that is passed at reference point/ posts reference
         DatabaseService.shared.REF_BASE.child("users").observe(.value) { (snapshot) in
@@ -56,13 +53,12 @@ class ViewController: UIViewController {
         }
         
     }
-
-    
-    //Creating text fields to pop up for Chipp to add signals.
     @IBAction func onAddTapped(_ sender: Any) {
-
+        
     }
     
+    
+ //receive data from the pickervc w/ popup.onsave/freeusersave
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPickerVC" {
             let popup = segue.destination as! PickerVC
@@ -74,6 +70,33 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func notificationTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let subscribe = UIAlertAction(title: "Paid Notifications On", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .newPosts)
+           
+        }
+        let unsubscribe = UIAlertAction(title: "Paid Notifications Off", style: .destructive) { (_) in
+            MessagingService.shared.unsubscribe(from: .newPosts)
+        }
+        let freeSubscribe = UIAlertAction(title: "Free Notifications On", style: .default) { (_) in
+            MessagingService.shared.subscribe(to: .freePosts)
+            
+        }
+
+        let freeUnsubscribe = UIAlertAction(title: "Free Notifications Off", style: .destructive) { (_) in
+            MessagingService.shared.unsubscribe(from: .freePosts)
+        }
+        
+        alert.addAction(subscribe)
+        alert.addAction(unsubscribe)
+        alert.addAction(freeSubscribe)
+        alert.addAction(freeUnsubscribe)
+        alert.popoverPresentationController?.sourceView = self.view
+        
+        present(alert, animated: true)
+    }
     
     //grab data from our picker and save to firebase
     func onSave(_ orderData: String,_ pairData: String, _ priceData: String, imageURL: String) -> () {
@@ -88,7 +111,7 @@ class ViewController: UIViewController {
                           "isPending"    :"false"]
         
         //generates new ID for each post and set values in our database as parameters
-//        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+
         DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
@@ -118,7 +141,7 @@ class ViewController: UIViewController {
                           "isPending"    :"false"]
         
         //generates new ID for each post and set values in our database as parameters
-        //        DatabaseService.shared.postsReference.childByAutoId().setValue(parameters)
+
         DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
@@ -133,6 +156,7 @@ class ViewController: UIViewController {
         DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
     }
     
+    //limit landscape to ipads
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.RawValue(UIInterfaceOrientation.portrait.rawValue))
@@ -198,7 +222,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if let postImageURL = post.imageURL {
             let url = URL(string: postImageURL)
             cell.postImageView.kf.setImage(with: url)
-//            cell.postImageView.loadImageUsingCacheWithUrlString(urlString: postImageURL)
+
         }
         
 
@@ -215,7 +239,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let closeAction = UIContextualAction(style: .normal, title: "Close") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "AdminTableViewCell", for: indexPath) as! AdminTableViewCell
+
             let cell = tableView.cellForRow(at: indexPath) as! AdminTableViewCell
             UIPasteboard.general.string = cell.priceLabel.text
             

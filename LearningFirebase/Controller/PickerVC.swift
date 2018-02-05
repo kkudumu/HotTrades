@@ -307,7 +307,8 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             if uploadImageView.image == nil {
-            uploadImageView.image = UIImage(named: "Screen Shot 2018-01-15 at 3.22.00 PM")
+            uploadImageView.image = UIImage(named: "chippnochart")
+                tapLabel.isHidden = true
             }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
             
@@ -322,6 +323,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
 //                    let pathString = pathURL?.path
                     self.onSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathURL!)
                     print(metadata)
+                    print("******Paid Signal Sent******")
                 })
             }
         }
@@ -331,6 +333,10 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         if pickerView != nil {
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
+            if uploadImageView.image == nil {
+                uploadImageView.image = UIImage(named: "chippnochart")
+                tapLabel.isHidden = true
+            }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
             
             
@@ -345,6 +351,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                     //                    let pathString = pathURL?.path
                     self.freeUserSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathURL!)
                     print(metadata)
+                    print("******Free Signal Sent******")
                 })
             }
         }

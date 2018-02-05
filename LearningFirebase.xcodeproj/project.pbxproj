@@ -34,7 +34,6 @@
 		33C3AFAE200C7799004BC19D /* MessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3AFAD200C7799004BC19D /* MessagingService.swift */; };
 		33D1B077201FAB35009A931F /* FreeUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1B076201FAB35009A931F /* FreeUserVC.swift */; };
 		33D3B55720187E750069F2A2 /* ChartImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D3B55620187E750069F2A2 /* ChartImageController.swift */; };
-		33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8462011D605005E1997 /* WebViewRef.swift */; };
 		A03BDECF6ABAF89B1734D956 /* Pods_LearningFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D31A84F38C30161E7345A2 /* Pods_LearningFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +68,6 @@
 		33C3AFAD200C7799004BC19D /* MessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingService.swift; sourceTree = "<group>"; };
 		33D1B076201FAB35009A931F /* FreeUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeUserVC.swift; sourceTree = "<group>"; };
 		33D3B55620187E750069F2A2 /* ChartImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartImageController.swift; sourceTree = "<group>"; };
-		33DEE8462011D605005E1997 /* WebViewRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRef.swift; sourceTree = "<group>"; };
 		44D31A84F38C30161E7345A2 /* Pods_LearningFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918AAEA0B5C13FC7F945B0EB /* Pods-LearningFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		B230A99B0837D43998A50014 /* Pods-LearningFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningFirebase/Pods-LearningFirebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		33A4DFF02009CD4B000A6E30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33DEE8462011D605005E1997 /* WebViewRef.swift */,
 				33A4DFF82009DC06000A6E30 /* AlertController.swift */,
 				330292CF20098568003C6420 /* ViewController.swift */,
 				33A4DFEE2009CD41000A6E30 /* SignInVC.swift */,
@@ -348,7 +345,6 @@
 				3345D8EF20187476009773DE /* Extensions.swift in Sources */,
 				330292CE20098568003C6420 /* AppDelegate.swift in Sources */,
 				33D1B077201FAB35009A931F /* FreeUserVC.swift in Sources */,
-				33DEE8472011D605005E1997 /* WebViewRef.swift in Sources */,
 				33AA44A8200ED6B500468484 /* ResetPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

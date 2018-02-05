@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import InstaZoom
+
 
 class ChartImageController: UIViewController, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     
