@@ -266,71 +266,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             success(true)
         }
         let masterDelete = UIContextualAction(style: .destructive, title: "MD") { (ac: UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            
-//            let cell = tableView.cellForRow(at: indexPath) as! AdminTableViewCell
-            
+
             guard let uid = Auth.auth().currentUser?.uid else { return }
-//            let post = self.posts[indexPath.row]
+            let post = self.posts[indexPath.row]
+          
             DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
                 for child in snapshot.children {
                     let snap = child as! DataSnapshot
                     
-                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
-                        for postchild in snapshot.children {
-                            let postsnap = postchild as! DataSnapshot
-                            
-                            
-                            
-                            
-//
-//                                if DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(postsnap.key).key  ==
-//                                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).key {
-//                                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).removeValue(completionBlock: { (error, ref) in
-//                                        if error != nil {
-//                                            print("ERROR: ", error)
-//                                            return
-//                                        }
-//                                    })
-//
-//                            }
-                            
-                            
-                            
-                            
-//                            DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).removeValue(completionBlock: { (error, ref) in
-//                                if error != nil {
-//                                    print("ERROR: ", error!)
-//                                    return
-//                                }
-//                                //                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts") this deletes ALL posts from ALL users
-//
-//                                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observe(.childRemoved, with: { (snapshot) in
-//                                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
-//                                        self.posts.remove(at: index)
-//                                        self.tableView.reloadData()
-//                                    } else {
-//                                        print("item not found")
-//                                        self.tableView.reloadData()
-//                                    }
-//                                })
-//                            })
+                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).observe(.value, with: { (snapshot) in
+                        
+                        if DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).child(post.uuid).key == DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child(post.uuid).key {
+                            DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).setValue(nil)
                         }
                     })
-                    
-                    
+                  
 
                 }
+                    
             })
-            success(true)
-        }
+        success(true)
+    }
         
         closeAction.title = "Copy"
         closeAction.backgroundColor = .purple
         masterDelete.title = "MD"
-        
-        
-        
-        
+    
         return UISwipeActionsConfiguration(actions: [masterDelete, closeAction])
     }
     

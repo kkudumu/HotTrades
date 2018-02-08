@@ -17,6 +17,7 @@ struct Post {
     let price: String
     let date: Date
     let imageURL: String?
+    let uuid: String
     
     
     init?(postId: String, dict: [String: Any]) {
@@ -30,6 +31,7 @@ struct Post {
         let pair = dict["pair"] as? String,
         let dateString = dict["date"] as? String,
         let imageURL = dict["imageURL"] as? String,
+        let uuid = dict["uuid"] as? String,
         let date = dateFormatter.date(from: dateString)
             else { return nil}
         
@@ -38,7 +40,7 @@ struct Post {
         self.pair = pair
         self.date = date
         self.imageURL = imageURL
-        
+        self.uuid = uuid
     }
     
 }
