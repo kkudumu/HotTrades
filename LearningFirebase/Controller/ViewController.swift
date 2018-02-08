@@ -101,6 +101,10 @@ class ViewController: UIViewController {
     //grab data from our picker and save to firebase
     func onSave(_ orderData: String,_ pairData: String, _ priceData: String, imageURL: String) -> () {
         
+        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+            
+        let key = DatabaseService.shared.REF_BASE.child("users").child(snapshot.key).child("posts").childByAutoId().key
+        
         let dateString = String(describing: Date())
         
         let parameters = ["signal"       :orderData,
@@ -108,11 +112,13 @@ class ViewController: UIViewController {
                           "price"        :priceData,
                           "date"         :dateString,
                           "imageURL"     :imageURL,
-                          "isPending"    :"false"]
+                          "isPending"    :"false",
+                          "uuid"         :key
+            ]
         
         //generates new ID for each post and set values in our database as parameters
 
-        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+        
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
@@ -121,39 +127,51 @@ class ViewController: UIViewController {
                     } else if snapshot.value as! String == "admin" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
                     }
+                }
             }
+            DatabaseService.shared.REF_BASE.child("posts_for_notifications").childByAutoId().setValue(parameters)
         }
-    }
-        DatabaseService.shared.REF_BASE.child("posts_for_notifications").childByAutoId().setValue(parameters)
+        
         
     }
     var photoThumbnail: UIImage!
     
     func freeUserSave(_ orderData: String,_ pairData: String, _ priceData: String, imageURL: String) -> () {
         
+        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+            
         let dateString = String(describing: Date())
+        
+        let key = DatabaseService.shared.REF_BASE.child("users").child(snapshot.key).child("posts").childByAutoId().key
         
         let parameters = ["signal"       :orderData,
                           "pair"         :pairData,
                           "price"        :priceData,
                           "date"         :dateString,
                           "imageURL"     :imageURL,
-                          "isPending"    :"false"]
+                          "isPending"    :"false",
+                          "uuid"         :key
+        ]
         
         //generates new ID for each post and set values in our database as parameters
 
-        DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value) { (snapshot) in
+        
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
+                
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
                     print(snapshot.value as! String, "snapshot.value as string")
                     if snapshot.value as! String == "free_user" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                    } else if snapshot.value as! String == "admin" {
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+    
                     }
                 }
             }
+            DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
         }
-        DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
+        
     }
     
     //limit landscape to ipads
@@ -185,6 +203,8 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
@@ -245,10 +265,73 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
             success(true)
         }
+        let masterDelete = UIContextualAction(style: .destructive, title: "MD") { (ac: UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            
+//            let cell = tableView.cellForRow(at: indexPath) as! AdminTableViewCell
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+//            let post = self.posts[indexPath.row]
+            DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    
+                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                        for postchild in snapshot.children {
+                            let postsnap = postchild as! DataSnapshot
+                            
+                            
+                            
+                            
+//
+//                                if DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(postsnap.key).key  ==
+//                                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).key {
+//                                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).removeValue(completionBlock: { (error, ref) in
+//                                        if error != nil {
+//                                            print("ERROR: ", error)
+//                                            return
+//                                        }
+//                                    })
+//
+//                            }
+                            
+                            
+                            
+                            
+//                            DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(postsnap.key).removeValue(completionBlock: { (error, ref) in
+//                                if error != nil {
+//                                    print("ERROR: ", error!)
+//                                    return
+//                                }
+//                                //                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts") this deletes ALL posts from ALL users
+//
+//                                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observe(.childRemoved, with: { (snapshot) in
+//                                    if let index = self.posts.index(where: {$0.postId == snapshot.key}) {
+//                                        self.posts.remove(at: index)
+//                                        self.tableView.reloadData()
+//                                    } else {
+//                                        print("item not found")
+//                                        self.tableView.reloadData()
+//                                    }
+//                                })
+//                            })
+                        }
+                    })
+                    
+                    
+
+                }
+            })
+            success(true)
+        }
+        
         closeAction.title = "Copy"
         closeAction.backgroundColor = .purple
+        masterDelete.title = "MD"
         
-        return UISwipeActionsConfiguration(actions: [closeAction])
+        
+        
+        
+        return UISwipeActionsConfiguration(actions: [masterDelete, closeAction])
     }
     
     
@@ -288,6 +371,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 })
             })
         }
+
+
+        
         return [delete, pending]
     }
     

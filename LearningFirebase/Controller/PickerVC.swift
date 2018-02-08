@@ -307,7 +307,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             if uploadImageView.image == nil {
-            uploadImageView.image = UIImage(named: "chippnochart")
+            uploadImageView.image = UIImage(named: "tradingfloor")
                 tapLabel.isHidden = true
             }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
@@ -334,7 +334,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             if uploadImageView.image == nil {
-                uploadImageView.image = UIImage(named: "chippnochart")
+                uploadImageView.image = UIImage(named: "tradingfloor")
                 tapLabel.isHidden = true
             }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
@@ -349,6 +349,7 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                     }
                     let pathURL = metadata?.downloadURL()?.absoluteString
                     //                    let pathString = pathURL?.path
+                    
                     self.freeUserSave?(self.pickerOrders, self.pickerPairs, self.priceTF.text!, pathURL!)
                     print(metadata)
                     print("******Free Signal Sent******")
