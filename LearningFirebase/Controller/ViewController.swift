@@ -163,6 +163,7 @@ class ViewController: UIViewController {
                     print(snapshot.value as! String, "snapshot.value as string")
                     if snapshot.value as! String == "free_user" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                        
                     } else if snapshot.value as! String == "admin" {
                         DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
     
@@ -270,19 +271,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
           
-            DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot
-                    
-                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).observe(.value, with: { (snapshot) in
-                        
-                        if DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).child(post.uuid).key == DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child(post.uuid).key {
-                            DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).setValue(nil)
-                        }
-                    })
-                  
-
+            DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value , with: { (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                    for child in snapshots {
+//                        let snap = snapshot.value as! [String:[String:Any]]
+                        print("Child:", snap)
+                    }
                 }
+
                     
             })
         success(true)
