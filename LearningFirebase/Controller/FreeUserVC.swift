@@ -55,19 +55,42 @@ class FreeUserVC: UIViewController {
         }
     }
     
-    @IBAction func onSubscribeTapped() {
-//        AlertController.subscribeFreeAlert(in: self)
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let subscribe = UIAlertAction(title: "On", style: .default) { (_) in
+    func createSwitch () -> UISwitch{
+        let switchControl = UISwitch(frame: CGRect(x:10, y:10, width:0, height:0))
+        switchControl.isOn = false
+        
+        if UserDefaults.standard.object(forKey: "SwitchState") != nil {
+            switchControl.isOn = UserDefaults.standard.bool(forKey: "SwitchState")
+        }
+        
+        switchControl.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
+        return switchControl
+        
+    }
+    
+    @objc func switchValueDidChange(sender: UISwitch!) {
+        print("Switch Value : \(sender.isOn)")
+        if sender.isOn == true {
+            UserDefaults.standard.set(true, forKey: "SwitchState")
             MessagingService.shared.subscribe(to: .freePosts)
             MessagingService.shared.unsubscribe(from: .newPosts)
-        }
-        let unsubscribe = UIAlertAction(title: "Off", style: .destructive) { (_) in
-            MessagingService.shared.unsubscribe(from: .freePosts)
+        } else if sender.isOn == false {
+            UserDefaults.standard.set(false, forKey: "SwitchState")
             MessagingService.shared.unsubscribe(from: .newPosts)
+            MessagingService.shared.unsubscribe(from: .freePosts)
         }
-        alert.addAction(subscribe)
-        alert.addAction(unsubscribe)
+        
+    }
+    
+    @IBAction func onSubscribeTapped() {
+        let alert = UIAlertController(title: "Toggle Notifications", message: "Tap switch to toggle", preferredStyle: .actionSheet)
+        
+        let doneButton = UIAlertAction(title: "Done", style: .default) { (_) in
+            print("Done tapped. View should dismiss")
+        }
+        
+        alert.addAction(doneButton)
+        alert.view.addSubview(createSwitch())
         alert.popoverPresentationController?.sourceView = self.view
         
         present(alert, animated: true)
