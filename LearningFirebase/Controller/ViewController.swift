@@ -123,9 +123,9 @@ class ViewController: UIViewController {
                 let snap = child as! DataSnapshot
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
                     if snapshot.value as! String == "subscribed_user" {
-                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(key).setValue(parameters)
                     } else if snapshot.value as! String == "admin" {
-                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(key).setValue(parameters)
                     }
                 }
             }
@@ -162,15 +162,15 @@ class ViewController: UIViewController {
                 DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("role").observeSingleEvent(of: .value) { (snapshot) in
                     print(snapshot.value as! String, "snapshot.value as string")
                     if snapshot.value as! String == "free_user" {
-                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(key).setValue(parameters)
                         
                     } else if snapshot.value as! String == "admin" {
-                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").childByAutoId().setValue(parameters)
+                        DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(key).setValue(parameters)
     
                     }
                 }
             }
-            DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").childByAutoId().setValue(parameters)
+            DatabaseService.shared.REF_BASE.child("posts_for_free_users_notifications").child(key).setValue(parameters)
         }
         
     }
@@ -246,8 +246,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
         }
         
-
-        
         cell.signalLabel?.text = posts[indexPath.row].signal
         cell.symbolLabel?.text = posts[indexPath.row].pair
         cell.priceLabel?.text = posts[indexPath.row].price
@@ -270,17 +268,30 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
             guard let uid = Auth.auth().currentUser?.uid else { return }
             let post = self.posts[indexPath.row]
-          
+            
+            
             DatabaseService.shared.REF_BASE.child("users").observeSingleEvent(of: .value , with: { (snapshot) in
-                if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
-                    for child in snapshots {
-//                        let snap = snapshot.value as! [String:[String:Any]]
-                        print("Child:", snap)
-                    }
-                }
-
+                // iterating through autoID's of all users
+                
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
                     
+                    DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").observeSingleEvent(of: .value , with: { (snapshot) in
+                        // compare the post of the master user with the post of all children of the user tree
+                        
+                        if DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).child(post.uuid).key ==
+                            DatabaseService.shared.REF_BASE.child("users").child(uid).child("posts").child(post.postId).child(post.uuid).key {
+                            
+                            // remove the post(Only removes for master at this point, despite iterating over all users with snap.key)
+                            
+                            DatabaseService.shared.REF_BASE.child("users").child(snap.key).child("posts").child(post.postId).setValue(nil)
+                        }
+                    })
+                }
             })
+            
+            
+            
         success(true)
     }
         
