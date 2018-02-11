@@ -82,7 +82,7 @@ class UserVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func onSubscribeTapped() {
-        let alert = UIAlertController(title: "Toggle Notifications", message: "Tap switch to toggle", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Toggle Notifications", message: "Tap the switch to toggle notifications on or off", preferredStyle: .actionSheet)
         
         let doneButton = UIAlertAction(title: "Done", style: .default) { (_) in
             print("Done tapped. View should dismiss")

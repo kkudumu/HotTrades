@@ -38,7 +38,7 @@ class SubPayVC: UIViewController {
                     if let product = result.retrievedProducts.first {
                         let priceString = product.localizedPrice!
                         print("Product: \(product.localizedDescription), price: \(priceString)")
-                        inAppPurchaseButtons[i][j]?.setTitle("\(product.localizedDescription) - \(priceString)/mo", for: .normal)
+                        inAppPurchaseButtons[i][j]?.setTitle("Subscribe", for: .normal)
                         self.verifySubscription(with: self.inAppPurchaseId[i][j], sharedSecret: self.sharedSecret, type: .autoRenewable)
                     
                     }

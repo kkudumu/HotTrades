@@ -95,8 +95,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-fI-PEa" userLabel="BottomContainer">
                                 <rect key="frame" x="0.0" y="458" width="375" height="330"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Nk-6Co">
+                                        <rect key="frame" x="8" y="60" width="359" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hEB-NN-P7n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Not a member? Tap here to sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="jJ5-Pe-FC6"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utB-v2-KKs">
-                                        <rect key="frame" x="108.66666666666669" y="0.0" width="158" height="52"/>
+                                        <rect key="frame" x="104" y="0.0" width="158" height="52"/>
                                         <color key="backgroundColor" red="0.30038088559999998" green="0.47079724070000001" blue="0.80298918490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="158" id="PPy-X4-EeJ"/>
@@ -112,22 +125,9 @@
                                             <action selector="onSignInTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="aMl-f9-v54"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Nk-6Co">
-                                        <rect key="frame" x="8" y="60" width="359" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hEB-NN-P7n"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Not a member? Tap here to sign up">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onSignUpTapped:" destination="qPQ-N1-2LY" eventType="touchUpInside" id="jJ5-Pe-FC6"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TXx-Nk-6Co" firstAttribute="centerX" secondItem="utB-v2-KKs" secondAttribute="centerX" id="KWq-wJ-Q3S"/>
+                                    <constraint firstItem="TXx-Nk-6Co" firstAttribute="centerX" secondItem="utB-v2-KKs" secondAttribute="centerX" constant="4.5" id="KWq-wJ-Q3S"/>
                                     <constraint firstItem="utB-v2-KKs" firstAttribute="top" secondItem="8dc-fI-PEa" secondAttribute="top" id="NJH-P8-b5S"/>
                                     <constraint firstItem="TXx-Nk-6Co" firstAttribute="centerX" secondItem="8dc-fI-PEa" secondAttribute="centerX" id="Ouz-wK-0WT"/>
                                     <constraint firstItem="TXx-Nk-6Co" firstAttribute="top" secondItem="utB-v2-KKs" secondAttribute="bottom" constant="8" id="om5-JA-d7U"/>
@@ -312,7 +312,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-xm-qZc">
-                                <rect key="frame" x="57.666666666666657" y="330" width="260" height="52"/>
+                                <rect key="frame" x="57" y="410" width="260" height="52"/>
                                 <color key="backgroundColor" red="0.1076666787" green="0.64379781479999998" blue="0.53019344810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="erZ-aU-ARl">
@@ -320,7 +320,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="260" id="lwb-xu-rKZ"/>
                                 </constraints>
-                                <state key="normal" title="Daily Forex Signals - $39.99/mo">
+                                <state key="normal" title="Subscribe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -341,7 +341,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-X9-XGP">
-                                <rect key="frame" x="57.666666666666657" y="398" width="260" height="52"/>
+                                <rect key="frame" x="57" y="488" width="260" height="52"/>
                                 <color key="backgroundColor" red="0.1076666787" green="0.64379781479999998" blue="0.53019344810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Nbx-Kj-mHU"/>
@@ -400,25 +400,41 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pricing: $19.99 for the first month, then $49.99/Month for every month after." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phO-FH-ghf">
+                                <rect key="frame" x="26" y="330" width="322" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Q4d-Va-InJ"/>
+                                    <constraint firstAttribute="width" constant="304" id="a1R-hg-A0o">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="350"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="322"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="350"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.01489593181759119" green="0.66848117113113403" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="emZ-Vn-qrp" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" constant="0.5" id="41D-3M-s6S"/>
                             <constraint firstItem="OYf-If-qdI" firstAttribute="top" secondItem="iOo-rP-Gzc" secondAttribute="top" id="8Z0-OM-eik"/>
                             <constraint firstItem="v8c-b9-n4V" firstAttribute="top" secondItem="iOo-rP-Gzc" secondAttribute="top" id="Bis-ZT-2jE"/>
+                            <constraint firstItem="phO-FH-ghf" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="GHp-Ov-ULS"/>
                             <constraint firstItem="emZ-Vn-qrp" firstAttribute="top" secondItem="KOh-gZ-IFq" secondAttribute="bottom" constant="16" id="HMJ-d4-SgF"/>
                             <constraint firstItem="OYf-If-qdI" firstAttribute="leading" secondItem="V4O-FZ-KEZ" secondAttribute="leadingMargin" id="Li2-Es-37v"/>
                             <constraint firstItem="Tf0-xm-qZc" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="LwA-WL-hdc"/>
                             <constraint firstItem="b1X-X9-XGP" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="OzQ-Cw-1Cv"/>
                             <constraint firstItem="ED8-r1-69I" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="Pax-aT-ALP"/>
-                            <constraint firstItem="Tf0-xm-qZc" firstAttribute="top" secondItem="emZ-Vn-qrp" secondAttribute="bottom" constant="8" id="REB-U9-rgB"/>
+                            <constraint firstItem="Tf0-xm-qZc" firstAttribute="top" secondItem="emZ-Vn-qrp" secondAttribute="bottom" constant="88" id="REB-U9-rgB"/>
                             <constraint firstItem="v8c-b9-n4V" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="SHK-jb-6VC"/>
+                            <constraint firstItem="phO-FH-ghf" firstAttribute="top" secondItem="emZ-Vn-qrp" secondAttribute="bottom" constant="8" id="VMC-qo-xki"/>
                             <constraint firstItem="CpU-jO-qFf" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="du1-6T-s5C"/>
                             <constraint firstItem="KOh-gZ-IFq" firstAttribute="top" secondItem="ED8-r1-69I" secondAttribute="bottom" constant="16" id="gdn-AL-yOl"/>
                             <constraint firstItem="KOh-gZ-IFq" firstAttribute="centerX" secondItem="V4O-FZ-KEZ" secondAttribute="centerX" id="ka0-zO-ZEL"/>
                             <constraint firstItem="CpU-jO-qFf" firstAttribute="top" secondItem="v8c-b9-n4V" secondAttribute="bottom" constant="20" id="m2v-KA-UZ9"/>
-                            <constraint firstItem="b1X-X9-XGP" firstAttribute="top" secondItem="Tf0-xm-qZc" secondAttribute="bottom" constant="16" id="tyB-Wh-Rdf"/>
-                            <constraint firstItem="Tf0-xm-qZc" firstAttribute="top" secondItem="emZ-Vn-qrp" secondAttribute="bottom" constant="8" id="vvf-cC-PlY"/>
+                            <constraint firstItem="b1X-X9-XGP" firstAttribute="top" secondItem="Tf0-xm-qZc" secondAttribute="bottom" constant="26" id="tyB-Wh-Rdf"/>
+                            <constraint firstItem="Tf0-xm-qZc" firstAttribute="top" secondItem="emZ-Vn-qrp" secondAttribute="bottom" constant="88" id="vvf-cC-PlY"/>
                             <constraint firstItem="ED8-r1-69I" firstAttribute="top" secondItem="CpU-jO-qFf" secondAttribute="bottom" constant="8" id="zsI-RP-skt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOo-rP-Gzc"/>
@@ -1653,7 +1669,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gga-Yg-r2f"/>
-        <segue reference="1d7-UU-ijO"/>
+        <segue reference="VLg-fo-agg"/>
         <segue reference="Lmv-La-1Ep"/>
     </inferredMetricsTieBreakers>
 </document>

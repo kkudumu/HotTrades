@@ -307,13 +307,13 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             if uploadImageView.image == nil {
-            uploadImageView.image = UIImage(named: "tradingfloor")
+            uploadImageView.image = UIImage(named: "nearestneighbor")
                 tapLabel.isHidden = true
             }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
             
             
-            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.1 ) {
+            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.2 ) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error)
@@ -334,14 +334,14 @@ class PickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("postImages").child("\(imageName).jpg")
             if uploadImageView.image == nil {
-                uploadImageView.image = UIImage(named: "tradingfloor")
+                uploadImageView.image = UIImage(named: "nearestneighbor")
                 tapLabel.isHidden = true
             }
             guard let imageUploadCheck = self.uploadImageView.image else {return}
             
             
             
-            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.1 ) {
+            if let uploadData = UIImageJPEGRepresentation(imageUploadCheck, 0.2 ) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error)
