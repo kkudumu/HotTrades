@@ -23,7 +23,7 @@ class SubPayVC: UIViewController {
 
     
 
-    let sharedSecret = "0f9d089ef8b64c368c3d9b503334ad21"
+    let sharedSecret = [Insert Key Here]
 
     override func viewDidLoad() {
         super.viewDidLoad()
